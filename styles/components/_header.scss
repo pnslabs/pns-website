@@ -1,0 +1,64 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5.2rem 0;
+  transition: all 0.3 ease-in;
+  @include responsiveness(phone) {
+    padding: 3.6rem 0;
+  }
+  &__wrapper {
+    transition: all 0.3 ease-in;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.2s ease-in;
+    & .header {
+      padding: 3.5rem;
+      transition: all 0.2s ease-in;
+      @include responsiveness(tablet) {
+        padding: 1.6rem 0;
+      }
+    }
+    &.--fixed {
+      background: $color-white;
+      box-shadow: 1px 7px 40px 0px rgba(0, 0, 0, 0.15);
+      & .header {
+        padding: 1.5rem;
+        @include responsiveness(phone) {
+          padding: 0.8rem 0;
+        }
+      }
+    }
+  }
+  &__nav {
+    display: block;
+    @include responsiveness(phone) {
+      // display: none;
+    }
+  }
+  &__nav-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  &__nav-item:first-child {
+    @include responsiveness(phone) {
+      display: none;
+    }
+  }
+  &__nav-item:not(:last-child) {
+    margin-right: 3.9rem;
+  }
+  &__nav-links {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: $color-body-text;
+    cursor: pointer;
+  }
+}

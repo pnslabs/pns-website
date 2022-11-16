@@ -1,0 +1,27 @@
+.button {
+  border: none;
+  background: $color-black;
+  color: $color-white;
+  font-family: $font-main;
+  font-size: 1.2rem;
+  line-height: 1.17;
+  font-weight: 700;
+  padding: 1.4rem 2.6rem;
+  border-radius: 1rem;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  &.large {
+    font-size: 1.6rem;
+    padding: 1.7rem 2.6rem;
+    @include responsiveness(phone) {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
+  &.success {
+    background: $color-success;
+    font-weight: 400;
+  }
+}

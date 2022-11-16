@@ -1,9 +1,14 @@
-html,
+@import "./abstract";
+@import "./components";
+
+html {
+  // This defines what 1 rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px  = 62.5%;
+  box-sizing: border-box;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $font-main;
 }
 
 a {
@@ -11,16 +16,20 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+a:link,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
 }
