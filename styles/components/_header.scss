@@ -1,8 +1,7 @@
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 39px 0;
+  @include row(space-between);
+  height: 15vh;
+  padding: 0;
   transition: all 0.3 ease-in;
   @include responsiveness(phone) {
     padding: 3.6rem 0;
@@ -16,11 +15,9 @@
     z-index: 999;
     transition: all 0.2s ease-in;
     & .header {
-      padding: 39px;
+      padding: 0;
+      height: 15vh;
       transition: all 0.2s ease-in;
-      @include responsiveness(tablet) {
-        padding: 1.6rem 0;
-      }
     }
     &.--fixed {
       background: $color-white;
@@ -46,7 +43,7 @@
     display: flex;
     align-items: center;
   }
-  &__nav-item:first-child {
+  &__nav-item {
     @include responsiveness(phone) {
       display: none;
     }
