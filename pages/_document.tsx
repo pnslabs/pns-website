@@ -8,18 +8,8 @@ export default function Document() {
           name="description"
           content="Unlock the power of web3 with your mobile phone."
         />
-        <link rel="icon" type="image/x-icon" href="/icons/icon.svg" />
+        <link rel="icon" type="image/x-icon" href="/icons/logo.svg" />
         <meta name="theme-color" content="#F7F6FF" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&family=Chakra+Petch:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         {/** Social share */}
         <meta property="og:title" content="pns.foundation" />
         <meta property="og:type" content="website" />

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { LogoBlack } from '../public/icons';
-// import { Button } from "./UI";
+import { LogoText } from '../public/icons';
+import { PNSButton } from './UI';
 
 const linkItems = [
   { name: 'Governance', link: 'governance' },
@@ -34,7 +34,7 @@ const Header = () => {
       <div className="container">
         <header className="header">
           <div>
-            <LogoBlack />
+            <LogoText />
           </div>
           <nav className="header__nav">
             <ul className="header__nav-items">
@@ -53,6 +53,7 @@ const Header = () => {
               ))}
             </ul>
           </nav>
+          <PNSButton text="Join Waitlist" />
         </header>
       </div>
     </div>

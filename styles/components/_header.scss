@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5.2rem 0;
+  padding: 39px 0;
   transition: all 0.3 ease-in;
   @include responsiveness(phone) {
     padding: 3.6rem 0;
@@ -16,7 +16,7 @@
     z-index: 999;
     transition: all 0.2s ease-in;
     & .header {
-      padding: 3.5rem;
+      padding: 39px;
       transition: all 0.2s ease-in;
       @include responsiveness(tablet) {
         padding: 1.6rem 0;
@@ -52,13 +52,13 @@
     }
   }
   &__nav-item:not(:last-child) {
-    margin-right: 3.9rem;
+    margin-right: 36px;
   }
   &__nav-links {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 1.5;
-    color: $color-body-text;
+    line-height: 20px;
+    color: $color-black;
     cursor: pointer;
   }
 }

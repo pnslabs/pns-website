@@ -22,6 +22,12 @@
   }
 }
 
+@mixin row($justify) {
+    display: flex;
+    align-items: center;
+    justify-content: $justify;
+}
+
 @mixin responsiveness($breakpoint) {
   @if $breakpoint == phone {
     @media (max-width: $bp-small) {

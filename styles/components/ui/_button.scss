@@ -1,27 +1,29 @@
 .button {
   border: none;
-  background: $color-black;
+  background: $color-action;
   color: $color-white;
-  font-family: $font-main;
-  font-size: 1.2rem;
-  line-height: 1.17;
+  border-radius: 12px;
+  font-size: 16px;
   font-weight: 700;
-  padding: 1.4rem 2.6rem;
-  border-radius: 1rem;
-  width: 100%;
-  display: block;
+  height: 52px;
+  padding: 0 30px;
   cursor: pointer;
   transition: all 0.2s ease;
-  &.large {
-    font-size: 1.6rem;
-    padding: 1.7rem 2.6rem;
-    @include responsiveness(phone) {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
+  @include responsiveness(phone) {
+    font-size: 1.5rem;
+    font-weight: 600;
   }
-  &.success {
-    background: $color-success;
-    font-weight: 400;
+  &.outline {
+    background: $color-white;
+    color: $color-action-text;
+    border: 1px solid $color-border-gray;
+  }
+  &__wrapper {
+    @include row(center);
+  }
+  &__text {
+    &.icon {
+      margin-right: 9.5px;
+    }
   }
 }
