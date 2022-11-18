@@ -28,6 +28,13 @@
     justify-content: $justify;
 }
 
+@mixin column($justify) {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: $justify;
+}
+
 @mixin responsiveness($breakpoint) {
   @if $breakpoint == phone {
     @media (max-width: $bp-small) {

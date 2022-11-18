@@ -1,0 +1,39 @@
+.hero {
+    @include row(center);
+    height: 100vh;
+    background-color: $color-white;
+
+    &__wrapper {
+      @include row(space-between);
+      @include responsiveness(phone) {
+        @include column(space-between);
+      }
+    }
+
+    &__content {
+        max-width: 55%;
+        @include responsiveness(phone) {
+          max-width: 100%;
+        }
+    }
+
+    &__title {
+        @include title;
+        line-height: 90px;
+    }
+
+    &__desc {
+        @include text;
+        line-height: 150%;
+        max-width: 80%;
+        margin-top: 30px;
+    }
+
+    &__action_wrapper {
+        @include row(flex-start);
+        margin-top: 30px;
+    }
+    &__divider {
+        margin: 0 10px;
+    }
+  }

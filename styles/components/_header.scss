@@ -1,6 +1,6 @@
 .header {
   @include row(space-between);
-  height: 15vh;
+  height: 13vh;
   padding: 0;
   transition: all 0.3 ease-in;
   @include responsiveness(phone) {
@@ -16,7 +16,7 @@
     transition: all 0.2s ease-in;
     & .header {
       padding: 0;
-      height: 15vh;
+      height: 13vh;
       transition: all 0.2s ease-in;
     }
     &.--fixed {
