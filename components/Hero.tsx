@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { PNSButton } from './UI';
 
 const Hero = () => {
@@ -23,6 +24,14 @@ const Hero = () => {
               />
             </div>
           </div>
+          <Image
+            className="hero__image"
+            style={{ objectFit: 'contain' }}
+            width={500}
+            height={600}
+            src="/images/hero-image.svg"
+            alt="hero"
+          />
         </div>
       </div>
     </div>

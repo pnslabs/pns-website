@@ -6,19 +6,19 @@
   font-family: $font-secondary;
   @include responsiveness(phone) {
     font-size: 40px;
-    line-height: 20px;
+    line-height: 50px;
   }
 }
 
 @mixin text {
   font-size: 20px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 30px;
   color: $color-black-neutral;
   font-family: $font-main;
   @include responsiveness(phone) {
     font-size: 18px;
-    line-height: 20px;
+    line-height: 25px;
   }
 }
 

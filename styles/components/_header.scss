@@ -32,8 +32,8 @@
   }
   &__nav {
     display: block;
-    @include responsiveness(phone) {
-      // display: none;
+    @include responsiveness(tablet) {
+      display: none;
     }
   }
   &__nav-items {
@@ -42,11 +42,6 @@
     list-style: none;
     display: flex;
     align-items: center;
-  }
-  &__nav-item {
-    @include responsiveness(phone) {
-      display: none;
-    }
   }
   &__nav-item:not(:last-child) {
     margin-right: 36px;

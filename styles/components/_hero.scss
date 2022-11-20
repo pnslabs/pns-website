@@ -2,17 +2,19 @@
     @include row(center);
     height: 100vh;
     background-color: $color-white;
+    width: 100%;
 
     &__wrapper {
       @include row(space-between);
-      @include responsiveness(phone) {
+      @include responsiveness(tablet) {
         @include column(space-between);
+        margin-top: 200px;
       }
     }
 
     &__content {
-        max-width: 55%;
-        @include responsiveness(phone) {
+        max-width: 60%;
+        @include responsiveness(tablet) {
           max-width: 100%;
         }
     }
@@ -24,16 +26,30 @@
 
     &__desc {
         @include text;
-        line-height: 150%;
         max-width: 80%;
         margin-top: 30px;
+        @include responsiveness(tablet) {
+          max-width: none;
+        }
     }
 
     &__action_wrapper {
         @include row(flex-start);
         margin-top: 30px;
+        width: 100%;;
     }
     &__divider {
         margin: 0 10px;
+    }
+
+    &__image {
+      @include responsiveness(tablet) {
+        width: 350px;
+        height: 500px;
+      }
+      @include responsiveness(phone) {
+        width: 250px;
+        height: 400px;
+      }
     }
   }
