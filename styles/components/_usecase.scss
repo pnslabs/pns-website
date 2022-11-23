@@ -21,6 +21,7 @@
     &__content {
         z-index: 999;
         @include row(space-between);
+        align-items: flex-start;
         @include responsiveness(tab-land){
             @include column(space-between);
         }
@@ -28,7 +29,6 @@
     &__left {
         max-width: 55%;
         position: relative;
-        z-index: 99999;
         @include responsiveness(tab-land){
             max-width: none;
         }
@@ -56,6 +56,7 @@
         padding: 40px;
         background: $color-white;
         border: 1px dashed $color-border-dashed;
+        position: relative;
         border-radius: 16px;
         display: grid;
         gap: 40px;
@@ -69,5 +70,77 @@
         position: absolute;
         bottom: 250px;
         left: 590px;
+        @include responsiveness(tab-land) {
+            display: none;
+        }
     }
+
+    &__right {
+        position: relative;
+    }
+
+    &__box1 {
+        position: relative;
+        top: 95px;
+        right: 195px;
+        @include responsiveness(tab-land){
+            right: 120px;
+        }
+        @include responsiveness(phone){
+            top: 75px;
+            right: 20px;
+        }
+    }
+
+    &__box2 {
+        position: relative;
+        top: 125px;
+        right: 30px;
+        @include responsiveness(phone){
+            top: 90px;
+            left: 20px;
+        }
+    }
+
+    &__box {
+        max-width: 282px;
+        min-height: 55.17px;
+        background: $color-box-bg;
+        border: 1px solid $color-border-dashed;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        padding: 9.5px 11.5px;
+    }
+
+    &__box-text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: $color-box-text;
+    }
+
+    &__bold {
+        color: $color-black;
+        font-weight: 600;
+    }
+
+    &__phone-image {
+        position: relative;
+        top: 110px;
+        right: 160px;
+        @include responsiveness(tab-land) {
+          width: 100%;
+          height: 700px;
+          right: 0px;
+          top: 170px;
+        }
+        @include responsiveness(tablet) {
+          margin-top: 0;
+          right: 0px;
+        }
+        @include responsiveness(phone) {
+          height: 500px;
+          right: 0px;
+        }
+      }
 }

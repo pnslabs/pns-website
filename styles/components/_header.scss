@@ -1,5 +1,7 @@
 .header {
   @include row(space-between);
+  z-index: 9999999999999;
+  position: relative;
   height: 13vh;
   padding: 0;
   transition: all 0.3 ease-in;

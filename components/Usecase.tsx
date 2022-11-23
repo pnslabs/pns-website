@@ -50,6 +50,35 @@ const Usecase = () => {
               <ConnectorIcon />
             </div>
           </div>
+          <div className="usecase__right">
+            <div className="usecase__box1">
+              <Box>
+                <div>
+                  Your <span className="usecase__bold">Ethereum</span> and{' '}
+                  <span className="usecase__bold">Solana</span> wallet addresses
+                  are now connected to your mobile no! 🚀
+                </div>
+              </Box>
+            </div>
+            <div className="usecase__box2">
+              <Box>
+                <div>
+                  You can now transfer{' '}
+                  <span className="usecase__bold">ETH</span> and{' '}
+                  <span className="usecase__bold">SOL</span> using your mobile
+                  number. 🥳
+                </div>
+              </Box>
+            </div>
+            <Image
+              className="usecase__phone-image"
+              style={{ objectFit: 'contain' }}
+              width={307}
+              height={662}
+              src="/images/phone.svg"
+              alt="phone image"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -57,3 +86,11 @@ const Usecase = () => {
 };
 
 export default Usecase;
+
+const Box = ({ children }: { children: any }) => {
+  return (
+    <div className="usecase__box">
+      <div className="usecase__box-text">{children}</div>
+    </div>
+  );
+};
