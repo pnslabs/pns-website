@@ -1,0 +1,64 @@
+.usecase {
+    height: 80vh;
+    background: $color-bg2;
+    padding-top: 79px;
+    @include responsiveness(tablet) {
+        padding-top: 50px;
+      }
+
+    &__wrapper {
+        height: 100%;
+        position: relative;
+    }
+    &__bg {
+        position: absolute;
+        height: 70%;
+        width: 100%;
+        bottom: 3px;
+        background-image: url('/images/use-case-bg.svg');
+        z-index: 1;
+    }
+    &__content {
+        z-index: 999;
+        @include row(space-between);
+        @include responsiveness(tab-land){
+            @include column(space-between);
+        }
+    }
+    &__left {
+        max-width: 55%;
+        @include responsiveness(tab-land){
+            max-width: none;
+        }
+    }
+    &__title {
+        @include title;
+    }
+
+   &__desc {
+        @include text;
+        margin-top: 20px;
+        margin-bottom: 55px;
+        max-width: 84%;
+        @include responsiveness(tablet) {
+          max-width: 90%;
+        }
+        @include responsiveness(phone) {
+            max-width: 97%;
+          }
+    }
+
+    &__icons-wrapper {
+        min-height: 370px;
+        width: 590px;
+        padding: 40px;
+        background: $color-white;
+        border: 1px dashed $color-border-dashed;
+        border-radius: 16px;
+        position: relative;
+        z-index: 99999;
+        @include responsiveness(tablet) {
+            width: 100%;
+        }
+    }
+}
