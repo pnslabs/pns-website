@@ -6,7 +6,7 @@
 
     &__wrapper {
       @include row(space-between);
-      @include responsiveness(tablet) {
+      @include responsiveness(tab-land) {
         @include column(space-between);
         margin-top: 200px;
       }
@@ -14,21 +14,20 @@
 
     &__content {
         max-width: 60%;
-        @include responsiveness(tablet) {
+        @include responsiveness(tab-land) {
           max-width: 100%;
         }
     }
 
     &__title {
         @include title;
-        line-height: 90px;
     }
 
     &__desc {
         @include text;
         max-width: 80%;
         margin-top: 30px;
-        @include responsiveness(tablet) {
+        @include responsiveness(tab-land) {
           max-width: none;
         }
     }
@@ -43,6 +42,11 @@
     }
 
     &__image {
+      @include responsiveness(tab-land) {
+        width: 550px;
+        height: 600px;
+        margin-top: 50px;
+      }
       @include responsiveness(tablet) {
         width: 350px;
         height: 500px;

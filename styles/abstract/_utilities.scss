@@ -6,3 +6,14 @@
     padding: 0 25px;
   }
 }
+
+.container-left {
+  margin-left: 95px;
+  @include responsiveness(tab-land) {
+    margin-left: 0;
+  }
+  @include responsiveness(phone) {
+    margin-left: 0;
+    padding: 0 25px;
+  }
+}
