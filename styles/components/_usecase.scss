@@ -27,6 +27,8 @@
     }
     &__left {
         max-width: 55%;
+        position: relative;
+        z-index: 99999;
         @include responsiveness(tab-land){
             max-width: none;
         }
@@ -55,10 +57,17 @@
         background: $color-white;
         border: 1px dashed $color-border-dashed;
         border-radius: 16px;
-        position: relative;
-        z-index: 99999;
+        display: grid;
+        gap: 40px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         @include responsiveness(tablet) {
             width: 100%;
+            grid-template-columns: 1fr 1fr 1fr;
         }
+    }
+    &__connector {
+        position: absolute;
+        bottom: 250px;
+        left: 590px;
     }
 }
