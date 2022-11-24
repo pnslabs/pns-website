@@ -99,8 +99,8 @@
         column-gap: 16px;
         text-decoration: none;
         &.last {
-            margin-left: 15px;
-            @include responsiveness(tab-land){
+            margin-left: 3px;
+            @include responsiveness(tablet){
                 margin-left: 0;
             }
         }
