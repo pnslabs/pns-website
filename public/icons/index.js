@@ -21,6 +21,7 @@ import FaqsBlackIcon from './faqs-icon-black';
 import GetStartedOneIcon from './getstarted-icon1';
 import GetStartedTwoIcon from './getstarted-icon2';
 import LogoWhite from './icon3';
+import LinkIcon from './link-icon';
 
 export {
   LogoBlack,
@@ -46,4 +47,5 @@ export {
   GetStartedOneIcon,
   GetStartedTwoIcon,
   LogoWhite,
+  LinkIcon,
 };

@@ -1,4 +1,23 @@
-import { LogoWhite } from '../public/icons';
+import { LinkIcon, LogoWhite } from '../public/icons';
+
+const communityItems = [
+  {
+    title: 'Discord',
+    url: '',
+  },
+  {
+    title: 'Twitter',
+    url: '',
+  },
+  {
+    title: 'Github',
+    url: '',
+  },
+  {
+    title: 'Telegram',
+    url: '',
+  },
+];
 
 const Footer = () => {
   return (
@@ -17,8 +36,24 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer__content-wrapper">
-          <div></div>
-          <div></div>
+          <div>
+            <div className="footer__title">Community</div>
+            {communityItems.map((item, index) => (
+              <a href={item.url} key={index} className="footer__item">
+                <LinkIcon />
+                <div className="footer__item-title">{item.title}</div>
+              </a>
+            ))}
+          </div>
+          <div>
+            <div className="footer__title">Foundation</div>
+            <a href="#" className="footer__item">
+              <div className="footer__item-title">Blog</div>
+            </a>
+          </div>
+        </div>
+        <div className="footer__copyright sm">
+          Copyright © 2022 PNS Foundation. All rights reserved.
         </div>
       </div>
     </div>

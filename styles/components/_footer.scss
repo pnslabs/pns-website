@@ -5,6 +5,10 @@
     &__wrapper {
         @include row(space-between);
         align-items: flex-start;
+        @include responsiveness(tablet){
+            @include column(space-between);
+            align-items: flex-start;
+        }
     }
 
     &__logo-wrapper {
@@ -27,10 +31,41 @@
         font-size: 16px;
         line-height: 150%;
         color: $color-white-alt;
+        @include responsiveness(tablet){
+            display: none;
+        }
+        &.sm {
+            display: none;
+            @include responsiveness(tablet){
+                display: block;
+            }
+        }
     }
 
     &__content-wrapper {
         @include row(flex-start);
         align-items: flex-start;
+        gap: 54px;
+        @include responsiveness(tablet){
+            margin-top: 50px;
+        }
+    }
+    &__title {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-white;
+        margin-bottom: 30px;
+    }
+    &__item {
+        @include row(flex-start);
+        gap: 9.35px;
+        margin-bottom: 17px;
+        text-decoration: none;
+    }
+    &__item-title {
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-white-alt;
     }
 }
