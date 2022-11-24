@@ -16,6 +16,8 @@ import MakerIcon from './maker-icon';
 import FileCoinIcon from './fil-icon';
 import BitcoinIcon from './bitcoin-icon';
 import ConnectorIcon from './connector';
+import FaqsYellowIcon from './faqs-icon-yellow';
+import FaqsBlackIcon from './faqs-icon-black';
 
 export {
   LogoBlack,
@@ -36,4 +38,6 @@ export {
   FileCoinIcon,
   BitcoinIcon,
   ConnectorIcon,
+  FaqsYellowIcon,
+  FaqsBlackIcon,
 };
