@@ -20,6 +20,7 @@ import FaqsYellowIcon from './faqs-icon-yellow';
 import FaqsBlackIcon from './faqs-icon-black';
 import GetStartedOneIcon from './getstarted-icon1';
 import GetStartedTwoIcon from './getstarted-icon2';
+import LogoWhite from './icon3';
 
 export {
   LogoBlack,
@@ -44,4 +45,5 @@ export {
   FaqsBlackIcon,
   GetStartedOneIcon,
   GetStartedTwoIcon,
+  LogoWhite,
 };

@@ -41,7 +41,21 @@
         margin: 0 10px;
     }
 
+    &__bg {
+      position: absolute;
+      width: 40%;
+      right: 0;
+      top: 80px;
+      height: 100%;
+      z-index: 1;
+      background-image: url('/images/background.svg');
+      background-position: center;
+      background-size: cover;
+    }
+
     &__image {
+      position: relative;
+      z-index: 2;
       @include responsiveness(tab-land) {
         width: 550px;
         height: 600px;

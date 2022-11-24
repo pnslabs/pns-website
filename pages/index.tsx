@@ -6,6 +6,7 @@ import {
   Teams,
   Faqs,
   GetStarted,
+  Footer,
 } from '../components';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Usecase />
       <Teams />
       <Faqs />
+      <Footer />
     </>
   );
 }

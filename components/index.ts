@@ -5,5 +5,6 @@ import Usecase from './Usecase';
 import Teams from './Teams';
 import Faqs from './Faqs';
 import GetStarted from './GetStarted';
+import Footer from './Footer';
 
-export { Header, Hero, Builders, Usecase, Teams, Faqs, GetStarted };
+export { Header, Hero, Builders, Usecase, Teams, Faqs, GetStarted, Footer };

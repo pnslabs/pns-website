@@ -80,24 +80,22 @@
     }
 
     &__content-title {
-        font-size: 30px;
+        font-size: 74px;
         line-height: 120%;
         color: $color-black;
         font-family: $font-secondary;
         @include responsiveness(tablet){
-            font-size: 24px;
+            font-size: 64px;
             line-height: 100%;
         }
         @include responsiveness(phone){
-            font-size: 20px;
+            font-size: 50px;
             line-height: 100%;
         }
     }
 
     &__content-desc {
-        font-size: 20px;
-        line-height: 150%;
-        color: $color-black-neutral;
+        @include text;
         padding-top: 42px;
         max-width: 70%;
         @include responsiveness(tablet){
