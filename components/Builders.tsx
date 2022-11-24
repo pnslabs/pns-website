@@ -17,8 +17,8 @@ const Builders = () => {
         <Image
           className="builders__image"
           style={{ objectFit: 'contain' }}
-          width={750}
-          height={600}
+          width={830}
+          height={700}
           src="/images/code-block.svg"
           alt="code sample"
         />

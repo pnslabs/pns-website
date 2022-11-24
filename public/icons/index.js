@@ -18,6 +18,8 @@ import BitcoinIcon from './bitcoin-icon';
 import ConnectorIcon from './connector';
 import FaqsYellowIcon from './faqs-icon-yellow';
 import FaqsBlackIcon from './faqs-icon-black';
+import GetStartedOneIcon from './getstarted-icon1';
+import GetStartedTwoIcon from './getstarted-icon2';
 
 export {
   LogoBlack,
@@ -40,4 +42,6 @@ export {
   ConnectorIcon,
   FaqsYellowIcon,
   FaqsBlackIcon,
+  GetStartedOneIcon,
+  GetStartedTwoIcon,
 };

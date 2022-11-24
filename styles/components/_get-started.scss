@@ -1,7 +1,7 @@
-.faqs {
+.getstarted {
     margin-top: 80px;
     padding-top: 60px;
-    background: $color-faqs-bg;    
+    background: $color-bg;    
 
     &__wrapper {
         @include row(flex-start);
@@ -22,6 +22,7 @@
         padding-left: 38px;
         border-left: 1px solid $color-black;
         width: 70%;
+        padding-bottom: 20px;
         @include responsiveness(phone){
             width: 100%;
             border-left: none;
