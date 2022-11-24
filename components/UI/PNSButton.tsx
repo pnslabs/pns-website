@@ -1,6 +1,6 @@
 import { ButtonArrow } from '../../public/icons';
 
-enum butonTypes {
+export enum butonTypes {
   button = 'button',
   submit = 'submit',
   reset = 'reset',

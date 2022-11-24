@@ -7,6 +7,7 @@ import {
   Faqs,
   GetStarted,
   Footer,
+  Communities,
 } from '../components';
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Usecase />
       <Teams />
       <Faqs />
+      <Communities />
       <Footer />
     </>
   );

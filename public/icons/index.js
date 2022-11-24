@@ -22,6 +22,10 @@ import GetStartedOneIcon from './getstarted-icon1';
 import GetStartedTwoIcon from './getstarted-icon2';
 import LogoWhite from './icon3';
 import LinkIcon from './link-icon';
+import DiscordIcon from './discord';
+import GithubIcon from './github';
+import TelegramIcon from './telegram';
+import TwitterIcon from './twitter';
 
 export {
   LogoBlack,
@@ -48,4 +52,8 @@ export {
   GetStartedTwoIcon,
   LogoWhite,
   LinkIcon,
+  DiscordIcon,
+  GithubIcon,
+  TelegramIcon,
+  TwitterIcon,
 };
