@@ -1,0 +1,54 @@
+.teams {
+   padding: 50px 0;
+   margin-top: 220px;
+
+   @include responsiveness(tab-land) {
+    margin-top: 1100px;
+}
+
+   &__title {
+        @include title;
+        max-width: 432px;
+        @include responsiveness(phone) {
+            max-width: 75%;
+        }
+    }
+
+    &__desc {
+        @include text;
+        max-width: 40%;
+        margin-top: 30px;
+        margin-bottom: 70px;
+        @include responsiveness(tab-land) {
+            max-width: none;
+            margin-bottom: 50px;
+        }
+        @include responsiveness(phone) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__wrapper {
+        width: 100%;
+        @include row(justify-between);
+        flex-wrap: wrap;
+        gap: 100px;
+        @include responsiveness(tab-land) {
+            gap: 60px;
+          }
+          @include responsiveness(phone) {
+            gap: 50px;
+          }
+    }
+
+    &__image {
+        @include responsiveness(tab-land) {
+            width: 200;
+            height: 250px;
+          }
+          @include responsiveness(phone) {
+            width: 120px;
+            height: 200px;
+          }
+    }
+  }

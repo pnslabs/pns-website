@@ -1,4 +1,4 @@
-import { Builders, Header, Hero, Usecase } from '../components';
+import { Builders, Header, Hero, Usecase, Teams } from '../components';
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <Hero />
       <Builders />
       <Usecase />
+      <Teams />
     </>
   );
 }
