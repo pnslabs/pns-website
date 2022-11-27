@@ -1,7 +1,13 @@
 .getstarted {
     margin-top: 80px;
     padding-top: 60px;
-    background: $color-bg;    
+    background: $color-bg;
+    @include responsiveness(tab-land){
+        margin-top: 140px;
+    } 
+    @include responsiveness(phone){
+        margin-top: 180px;
+    }    
 
     &__wrapper {
         @include row(flex-start);

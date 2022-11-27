@@ -4,7 +4,7 @@
     background-color: $color-white;
     width: 100%;
     @include responsiveness(phone){
-      margin-top: 30px;
+      margin-top: 160px;
     }
 
     &__wrapper {
@@ -60,17 +60,9 @@
       position: relative;
       z-index: 2;
       @include responsiveness(tab-land) {
-        width: 550px;
-        height: 600px;
-        margin-top: 50px;
-      }
-      @include responsiveness(tablet) {
-        width: 350px;
-        height: 500px;
-      }
-      @include responsiveness(phone) {
-        width: 250px;
-        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
       }
     }
   }

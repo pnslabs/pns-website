@@ -4,7 +4,11 @@
 
    @include responsiveness(tab-land) {
     margin-top: 1100px;
-}
+  }
+
+  @include responsiveness(phone) {
+    margin-top: 1150px;
+  }
 
    &__title {
         @include title;
@@ -43,6 +47,8 @@
 
     &__image {
         @include responsiveness(tab-land) {
+            object-fit: cover;
+            object-position: center;
             width: 200;
             height: 250px;
           }
