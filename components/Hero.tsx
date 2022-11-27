@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { PNSButton } from './UI';
 
-const Hero = () => {
+const Hero = ({ handleModal }: { handleModal: () => void }) => {
   return (
     <>
       <div className="hero">
@@ -16,7 +16,7 @@ const Hero = () => {
                 connects wallet addresses to phone numbers
               </h6>
               <div className="hero__action_wrapper">
-                <PNSButton text="Join Waitlist" />
+                <PNSButton onClick={handleModal} text="Join Waitlist" />
                 <div className="hero__divider" />
                 <PNSButton
                   hasIcon={false}

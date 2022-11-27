@@ -17,6 +17,7 @@ interface IPNSButton {
   type?: butonTypes;
   onClick?: () => void;
   hasIcon?: boolean;
+  fullWidth?: boolean;
 }
 const PNSButton = ({
   text,
@@ -24,10 +25,14 @@ const PNSButton = ({
   type = butonTypes.button,
   onClick,
   hasIcon = true,
+  fullWidth = false,
 }: IPNSButton) => {
   return (
     <>
-      <button type={type} className={`button ${variant}`} onClick={onClick}>
+      <button
+        type={type}
+        className={`button ${variant} ${fullWidth && 'full'}`}
+        onClick={onClick}>
         <div className="button__wrapper">
           <div className={`button__text ${hasIcon && 'icon'}`}>{text}</div>
           {hasIcon && <ButtonArrow />}

@@ -11,7 +11,7 @@ const linkItems = [
   { name: 'Community', link: 'community' },
 ];
 
-const Header = () => {
+const Header = ({ handleModal }: { handleModal: () => void }) => {
   const [isTop, setIsTop] = useState(true);
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +53,7 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-          <PNSButton text="Join Waitlist" />
+          <PNSButton onClick={handleModal} text="Join Waitlist" />
         </header>
       </div>
     </div>

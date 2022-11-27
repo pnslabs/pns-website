@@ -20,6 +20,9 @@
     color: $color-action-text;
     border: 1px solid $color-border-gray;
   }
+  &.full {
+    width: 100%;
+  }
   &__wrapper {
     @include row(center);
   }

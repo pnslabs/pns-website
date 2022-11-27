@@ -1,0 +1,35 @@
+.input {
+    width: 100%;
+    margin-bottom: 55px;
+    height: 65px;
+    &__label {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: $color-black;
+    }
+    &__input {
+        width: 100%;
+        padding: 6px 10px 6px 20px;
+        height: 56px;
+        border: 1px solid #E3E3E3;
+        border-radius: 12px;
+        background: $color-white;
+        font-size: 16px;
+        margin-top: 12px;
+        ::placeholder {
+            color: #B6B6B6;
+        }
+        &.--error {
+          border-color: #F87171        }
+    }
+    &__input:focus-visible {
+        border: 1px solid #E3E3E3;
+        outline: none;
+    }
+    &__error {
+        margin-top: 5px;
+        font-size: 13px;
+        color: #F87171;
+    }
+}

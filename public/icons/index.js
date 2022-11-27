@@ -26,6 +26,7 @@ import DiscordIcon from './discord';
 import GithubIcon from './github';
 import TelegramIcon from './telegram';
 import TwitterIcon from './twitter';
+import CancelIcon from './cancel-icon';
 
 export {
   LogoBlack,
@@ -56,4 +57,5 @@ export {
   GithubIcon,
   TelegramIcon,
   TwitterIcon,
+  CancelIcon,
 };
