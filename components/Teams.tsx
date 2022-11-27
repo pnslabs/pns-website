@@ -9,7 +9,7 @@ const teams = [
 
 const Teams = () => {
   return (
-    <div className="teams">
+    <div id="team" className="teams">
       <div className="container">
         <h2 className="teams__title">Okay, The Team 😲</h2>
         <div className="teams__desc">

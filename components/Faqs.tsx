@@ -25,7 +25,7 @@ const items = [
 const Faqs = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <div className="faqs">
+    <div id="faqs" className="faqs">
       <div className="faqs__wrapper">
         <div className="faqs__left-wrapper">
           <div className="faqs__desc">

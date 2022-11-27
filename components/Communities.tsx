@@ -39,7 +39,7 @@ const Communities = () => {
     e.preventDefault();
   };
   return (
-    <div className="community">
+    <div id="community" className="community">
       <div className="community__wrapper container">
         <div className="community__box left">
           <h2 className="community__title">Stay updated on everything PNS</h2>
