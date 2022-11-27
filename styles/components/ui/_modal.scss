@@ -38,7 +38,7 @@
         z-index: 9999999999999;
         @include responsiveness(phone){
             margin: 0 20px;
-            padding: 23px;
+            padding: 50px 23px;
             max-height: 80vh;
             overflow-y: auto;
         }
