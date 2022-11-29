@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PNSButton } from './UI';
+import heroImage from '../public/images/hero-image.svg';
 
 const Hero = ({ handleModal }: { handleModal: () => void }) => {
   return (
@@ -25,13 +26,20 @@ const Hero = ({ handleModal }: { handleModal: () => void }) => {
                 />
               </div>
             </div>
-            <Image
+            {/* <Image
               className="hero__image"
               style={{ objectFit: 'contain' }}
               width={500}
               height={600}
               src="/images/hero-image.svg"
               alt="hero"
+            /> */}
+            <Image
+              src={heroImage}
+              alt="hero image"
+              height={600}
+              // width={"auto"}
+              priority={true}
             />
           </div>
         </div>
