@@ -5,13 +5,12 @@
 
     &__wrapper {
         @include row(flex-start);
-        align-items: center;
     }
 
     &__left-wrapper {
         @include row(flex-end);
         padding-right: 38px;
-        width: 30%;
+        width: 28%;
         @include responsiveness(phone){
             display: none;
         }
@@ -21,7 +20,7 @@
         @include row(flex-start);
         padding-left: 38px;
         border-left: 1px solid $color-black;
-        width: 70%;
+        width: 72%;
         @include responsiveness(phone){
             width: 100%;
             border-left: none;
@@ -31,11 +30,12 @@
 
     &__content-right-wrapper {
         @include row(flex-start);
+        align-items: flex-start;
         padding-left: 38px;
         padding-top: 40px;
         padding-bottom: 50px;
         border-left: 1px solid $color-black;
-        width: 70%;
+        width: 72%;
         cursor: pointer;
         @include responsiveness(phone){
             width: 100%;
@@ -54,9 +54,7 @@
         @include text;
         padding-top: 14px;
         text-align: right;
-        max-width: 80%;
         @include responsiveness(tab-land){
-            max-width: 100%;
             font-size: 13px;
         }
     }
@@ -68,6 +66,7 @@
     &__arrow {
         color: $color-black;
         font-size: 20px;
+        margin-top: 3px;
         &.active {
             transform: rotate(90deg); 
         }

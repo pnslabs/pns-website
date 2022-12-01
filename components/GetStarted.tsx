@@ -28,42 +28,49 @@ const GetStarted = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
     <div className="getstarted">
-      <div className="getstarted__wrapper">
-        <div className="getstarted__left-wrapper">
-          <div className="getstarted__desc">
-            Link your mobile number with all of your Ethereum-compatible wallet
-            addresses with this easy steps.
+      <div className="container">
+        <div className="getstarted__wrapper">
+          <div className="getstarted__left-wrapper">
+            <div className="getstarted__desc">
+              Link your mobile number with all of your Ethereum-compatible
+              wallet addresses with this easy steps.
+            </div>
+          </div>
+          <div className="getstarted__right-wrapper">
+            <h2 className="getstarted__title">Getting started</h2>
           </div>
         </div>
-        <div className="getstarted__right-wrapper">
-          <h2 className="getstarted__title">Getting started</h2>
-        </div>
-      </div>
-      {items.map((item, index) => (
-        <div key={index} className="getstarted__wrapper">
-          <div className="getstarted__left-wrapper">{item.icon}</div>
-          <div
-            onClick={() => setActiveIndex(index)}
-            className={`getstarted__content-right-wrapper border ${
-              index === items.length - 1 && 'noborder'
-            }`}>
+        {items.map((item, index) => (
+          <div key={index} className="getstarted__wrapper">
+            <div className="getstarted__left-wrapper">{item.icon}</div>
             <div
-              className={`getstarted__arrow ${
-                index === activeIndex && 'active'
+              onClick={() => setActiveIndex(index)}
+              className={`getstarted__content-right-wrapper border ${
+                index === items.length - 1 && 'noborder'
               }`}>
-              {'>'}
-            </div>
-            <div className="getstarted__content-wrapper">
-              <div className="getstarted__content-title">{item.title}</div>
-              <AnimateHeight
-                duration={500}
-                height={index === activeIndex ? 'auto' : 0}>
-                <p className="getstarted__content-desc">{item.desc}</p>
-              </AnimateHeight>
+              <div
+                className={`getstarted__arrow ${
+                  index === activeIndex && 'active'
+                }`}>
+                {'>'}
+              </div>
+              <div className="getstarted__content-wrapper">
+                <div
+                  className={`getstarted__content-title ${
+                    index === activeIndex && 'active'
+                  }`}>
+                  {item.title}
+                </div>
+                <AnimateHeight
+                  duration={500}
+                  height={index === activeIndex ? 'auto' : 0}>
+                  <p className="getstarted__content-desc">{item.desc}</p>
+                </AnimateHeight>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

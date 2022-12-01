@@ -14,7 +14,7 @@
     &__left-wrapper {
         @include row(flex-end);
         padding-right: 38px;
-        width: 30%;
+        width: 28%;
         @include responsiveness(phone){
             display: none;
         }
@@ -24,7 +24,7 @@
         @include row(flex-start);
         padding-left: 38px;
         border-left: 1px solid $color-black;
-        width: 70%;
+        width: 72%;
         padding-bottom: 20px;
         @include responsiveness(phone){
             width: 100%;
@@ -35,11 +35,12 @@
 
     &__content-right-wrapper {
         @include row(flex-start);
+        align-items: flex-start;
         padding-left: 38px;
         padding-top: 40px;
         padding-bottom: 50px;
         border-left: 1px solid $color-black;
-        width: 70%;
+        width: 72%;
         cursor: pointer;
         @include responsiveness(phone){
             width: 100%;
@@ -58,9 +59,7 @@
         @include text;
         padding-top: 14px;
         text-align: right;
-        max-width: 80%;
         @include responsiveness(tab-land){
-            max-width: 100%;
             font-size: 13px;
         }
     }
@@ -72,6 +71,7 @@
     &__arrow {
         color: $color-black;
         font-size: 20px;
+        margin-top: 17px;
         &.active {
             transform: rotate(90deg); 
         }
@@ -85,7 +85,7 @@
     &__content-title {
         font-size: 74px;
         line-height: 120%;
-        color: $color-black;
+        color: #A3A3A3;
         font-family: $font-secondary;
         @include responsiveness(tablet){
             font-size: 64px;
@@ -95,12 +95,14 @@
             font-size: 50px;
             line-height: 100%;
         }
+        &.active {
+            color: $color-black;
+        }
     }
 
     &__content-desc {
         @include text;
         padding-top: 42px;
-        max-width: 70%;
         @include responsiveness(tablet){
             font-size: 18px;
             line-height: 120%;
@@ -108,7 +110,6 @@
         @include responsiveness(phone){
             font-size: 14px;
             line-height: 110%;
-            max-width: 100%;
             padding-top: 32px;
         }
     }
