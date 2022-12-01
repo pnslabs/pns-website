@@ -4,7 +4,7 @@
     background-color: $color-white;
     width: 100%;
     @include responsiveness(phone){
-      margin-top: -50px;
+      margin-top: 60px;
     }
 
     &__wrapper {

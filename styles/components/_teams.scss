@@ -1,13 +1,13 @@
 .teams {
    padding: 50px 0;
-   margin-top: 220px;
+   margin-top: 350px;
 
    @include responsiveness(tab-land) {
     margin-top: 1100px;
   }
 
   @include responsiveness(phone) {
-    margin-top: 1190px;
+    margin-top: 940px;
   }
 
    &__title {
@@ -34,14 +34,14 @@
 
     &__wrapper {
         width: 100%;
-        @include row(justify-between);
+        @include row(space-between);
         flex-wrap: wrap;
         gap: 100px;
         @include responsiveness(tab-land) {
             gap: 60px;
           }
           @include responsiveness(phone) {
-            gap: 50px;
+            gap: 20px;
           }
     }
 
@@ -53,7 +53,7 @@
             height: 250px;
           }
           @include responsiveness(phone) {
-            width: 120px;
+            width: 160px;
             height: 200px;
           }
     }
