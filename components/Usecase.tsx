@@ -16,6 +16,7 @@ import {
   BitcoinIcon,
   ConnectorIcon,
 } from '../public/icons';
+import image from '../public/images/phone.svg';
 
 const Usecase = () => {
   return (
@@ -71,12 +72,11 @@ const Usecase = () => {
               </Box>
             </div>
             <Image
-              className="usecase__phone-image"
-              style={{ objectFit: 'contain' }}
-              width={307}
-              height={662}
-              src="/images/phone.svg"
+              src={image}
               alt="phone image"
+              height={662}
+              priority={true}
+              className="usecase__phone-image"
             />
           </div>
         </div>

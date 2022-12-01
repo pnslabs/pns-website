@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PNSButton } from './UI';
+import image from '../public/images/code-block.svg';
 
 const Builders = () => {
   return (
@@ -15,12 +16,11 @@ const Builders = () => {
           <PNSButton text="View Doc" />
         </div>
         <Image
-          className="builders__image"
-          style={{ objectFit: 'contain' }}
-          width={830}
-          height={700}
-          src="/images/code-block.svg"
+          src={image}
           alt="code sample"
+          height={600}
+          priority={true}
+          className="builders__image"
         />
       </div>
     </div>

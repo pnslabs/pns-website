@@ -17,6 +17,7 @@
         bottom: 3px;
         background-image: url('/images/use-case-bg.svg');
         z-index: 1;
+        background-repeat: no-repeat;
     }
     &__content {
         z-index: 999;
@@ -57,13 +58,18 @@
         background: $color-white;
         border: 1px dashed $color-border-dashed;
         position: relative;
+        z-index: 4;
         border-radius: 16px;
         display: grid;
         gap: 40px;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        justify-items: center;
+
         @include responsiveness(tablet) {
             width: 100%;
             grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
         }
     }
     &__connector {
@@ -126,13 +132,12 @@
 
     &__phone-image {
         position: relative;
-        top: 110px;
+        z-index: 4;
+        top: 190px;
         right: 160px;
         @include responsiveness(tab-land) {
           right: 0px;
-          top: 170px;
-          object-fit: cover;
-          object-position: center;
+          top: 150px;
           width: 100%;
         }
         @include responsiveness(tablet) {

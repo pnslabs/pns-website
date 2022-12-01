@@ -38,8 +38,8 @@ const Hero = ({ handleModal }: { handleModal: () => void }) => {
               src={heroImage}
               alt="hero image"
               height={600}
-              // width={"auto"}
               priority={true}
+              className="hero__img"
             />
           </div>
         </div>

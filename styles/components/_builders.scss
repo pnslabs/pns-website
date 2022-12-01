@@ -37,16 +37,12 @@
 
     &__image {
         @include responsiveness(tab-land) {
-          margin-top: 80px;
-          object-fit: cover;
-          object-position: center;
+          margin-top: 20px;
           width: 100%;
         }
-        @include responsiveness(tablet) {
-          margin-top: 0;
-        }
         @include responsiveness(phone) {
-          height: 400px;
+          margin-top: 50px;
+          height: 300px;
         }
       }
   }

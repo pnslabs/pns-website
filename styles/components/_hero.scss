@@ -4,7 +4,7 @@
     background-color: $color-white;
     width: 100%;
     @include responsiveness(phone){
-      margin-top: 160px;
+      margin-top: -50px;
     }
 
     &__wrapper {
@@ -64,5 +64,12 @@
       background-image: url('/images/background.svg');
       background-position: center;
       background-size: cover;
+    }
+    &__img {
+      position: relative;
+      z-index: 2;
+      @include responsiveness(phone) {
+        margin-top:20px;
+      }
     }
   }
