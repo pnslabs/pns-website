@@ -36,6 +36,16 @@
 }
 
 @mixin responsiveness($breakpoint) {
+  @if $breakpoint == phone-tiny {
+    @media (max-width: $bp-tiny) {
+      @content;
+    } //375px
+  }
+  @if $breakpoint == phone-sm {
+    @media (max-width: $bp-smallest) {
+      @content;
+    } //500px
+  }
   @if $breakpoint == phone {
     @media (max-width: $bp-small) {
       @content;
