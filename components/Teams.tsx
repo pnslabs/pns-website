@@ -1,10 +1,30 @@
 import Image from 'next/image';
 
 const teams = [
-  '/images/njoku.svg',
-  '/images/justice.svg',
-  '/images/clement.svg',
-  '/images/joseph.svg',
+  {
+    firstName: 'Njoku',
+    lastName: 'Emmanuel',
+    role: 'Engineering 👨🏾‍💻',
+    image: '/images/njoku.png',
+  },
+  {
+    firstName: 'Justice',
+    lastName: 'Eziefule',
+    role: 'Engineering 👨🏾‍💻',
+    image: '/images/justice.png',
+  },
+  {
+    firstName: 'Clement',
+    lastName: 'Hugbo',
+    role: 'Design 🎨',
+    image: '/images/clement.png',
+  },
+  {
+    firstName: 'Joseph',
+    lastName: 'Peculiar',
+    role: 'Engineering 👨🏾‍💻',
+    image: '/images/joseph.png',
+  },
 ];
 
 const Teams = () => {
@@ -18,15 +38,27 @@ const Teams = () => {
         </div>
         <div className="teams__wrapper">
           {teams.map((team, index) => (
-            <Image
-              key={index}
-              className="teams__image"
-              style={{ objectFit: 'contain' }}
-              width={318}
-              height={391}
-              src={team}
-              alt="team member image"
-            />
+            <div className="teams__image-wrapper">
+              <div className="teams__image-details">
+                <div>
+                  <div className="teams__name">
+                    <div>{team.firstName}</div>
+                    <div className="teams__first-name">{team.lastName}</div>
+                  </div>
+                  <div className="teams__role">{team.role}</div>
+                </div>
+                <div></div>
+              </div>
+              <Image
+                key={index}
+                className="teams__image"
+                style={{ objectFit: 'contain' }}
+                width={338}
+                height={300}
+                src={team.image}
+                alt="team member image"
+              />
+            </div>
           ))}
         </div>
       </div>

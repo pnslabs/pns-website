@@ -36,25 +36,72 @@
         width: 100%;
         @include row(space-between);
         flex-wrap: wrap;
-        gap: 100px;
-        @include responsiveness(tab-land) {
-            gap: 60px;
+        row-gap: 200px;
+        @include responsiveness(tablet) {
+          gap: 30px;
           }
           @include responsiveness(phone) {
-            gap: 20px;
+            gap: 1px;
+            row-gap: 80px;
           }
     }
 
     &__image {
-        @include responsiveness(tab-land) {
-            object-fit: cover;
-            object-position: center;
-            width: 200;
+        @include responsiveness(tablet) {
+          object-fit: cover;
+            width: 200px;
             height: 250px;
           }
           @include responsiveness(phone) {
-            width: 160px;
+            width: 150px;
             height: 200px;
           }
+    }
+    &__image-wrapper {
+      position: relative;
+      @include column(center);
+    }
+    &__image-details {
+      min-height: 50px;
+      width: 100%;
+      background: $color-black;
+      position: absolute;
+      padding: 19px 24px;
+      bottom: -100px;
+      @include row(space-between);
+      @include responsiveness(tablet) {
+        bottom: -43px;
+       }
+      @include responsiveness(phone) {
+        bottom: -47px;
+       }
+    }
+    &__name {
+      font-weight: 800;
+      font-size: 20px;
+      line-height: 120%;
+      color: $color-white;
+      font-family: $font-secondary;
+      @include responsiveness(tablet) {
+        font-size: 13px;
+       }
+      @include responsiveness(phone) {
+       font-size: 11px;
+      }
+    }
+    &__first-name {
+      font-weight: 400;
+    }
+    &__role {
+      font-size: 16px;
+      line-height: 120%;
+      color: #D2D2D2;
+      margin-top: 12.05px;
+      @include responsiveness(tablet) {
+        font-size: 11px;
+       }
+      @include responsiveness(phone) {
+       font-size: 9px;
+      }
     }
   }
