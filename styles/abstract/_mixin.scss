@@ -5,7 +5,7 @@
   color: $color-black;
   font-family: $font-secondary;
   @include responsiveness(phone) {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 50px;
   }
 }

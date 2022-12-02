@@ -26,21 +26,32 @@ const Hero = ({ handleModal }: { handleModal: () => void }) => {
                 />
               </div>
             </div>
-            {/* <Image
-              className="hero__image"
-              style={{ objectFit: 'contain' }}
-              width={500}
-              height={600}
-              src="/images/hero-image.svg"
-              alt="hero"
-            /> */}
-            <Image
-              src={heroImage}
-              alt="hero image"
-              height={600}
-              priority={true}
-              className="hero__img"
-            />
+            <div className="hero__img-wrapper">
+              <div className="hero__box top">
+                <div className="hero__box-text">
+                  You have succesfully sent{' '}
+                  <span className="hero__box-text-inner">$234.95</span> to{' '}
+                  <span className="hero__box-text-inner">+971-234-761-221</span>{' '}
+                  🥳
+                </div>
+              </div>
+              <Image
+                src={heroImage}
+                alt="hero image"
+                height={600}
+                priority={true}
+              />
+              <div className="hero__box bottom">
+                <div className="hero__box-text">
+                  <span className="hero__box-text-inner">Kamzy</span>, your
+                  mobile no{' '}
+                  <span className="hero__box-text-inner">+971-234-761-221</span>{' '}
+                  just recieved{' '}
+                  <span className="hero__box-text-inner">$234.95</span> from{' '}
+                  <span className="hero__box-text-inner">Codemathics</span> 🥳
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
