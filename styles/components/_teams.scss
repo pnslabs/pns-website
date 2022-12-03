@@ -10,6 +10,11 @@
     margin-top: 940px;
   }
 
+  @include responsiveness(phone-tiny) {
+    margin-top: 1100px;
+  }
+
+
    &__title {
         @include title;
         max-width: 432px;
@@ -38,7 +43,7 @@
         flex-wrap: wrap;
         row-gap: 200px;
         @include responsiveness(tablet) {
-          gap: 30px;
+          gap: 10px;
           }
           @include responsiveness(phone) {
             gap: 1px;
@@ -49,7 +54,7 @@
     &__image {
         @include responsiveness(tablet) {
           object-fit: cover;
-            width: 200px;
+            width: 150px;
             height: 250px;
           }
           @include responsiveness(phone) {
@@ -67,8 +72,9 @@
       background: $color-black;
       position: absolute;
       padding: 19px 24px;
-      bottom: -100px;
+      bottom: -80px;
       @include row(space-between);
+      align-items: flex-start;
       @include responsiveness(tablet) {
         bottom: -43px;
        }
@@ -102,6 +108,41 @@
        }
       @include responsiveness(phone) {
        font-size: 9px;
+      }
+    }
+    &__link-wrapper {
+      @include row(center);
+      width: 44px;
+      height: 44px;
+      border-radius: 44px;
+      cursor: pointer;
+      @include responsiveness(phone){
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+      }
+      :hover {
+        @include keyframes(arrowMovement){
+          from {
+            transform: rotate(0);
+          }
+          to {
+            transform: rotate(45deg);
+          }
+        }
+        @include animate(arrowMovement, .3s, ease, 1);
+      }
+      &.blue {
+        background: #4053FF;
+      }
+      &.orange {
+        background: #FF6996;
+      }
+      &.purple {
+        background: #6D39FF;
+      }
+      &.yellow {
+        background: #FEB80A;
       }
     }
   }

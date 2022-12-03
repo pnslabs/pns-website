@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { ArrowRightIcon } from '../public/icons';
+import { ReactComponent as LinkSvg } from '/icons/dd.svg';
 
 const teams = [
   {
@@ -6,24 +8,28 @@ const teams = [
     lastName: 'Emmanuel',
     role: 'Engineering 👨🏾‍💻',
     image: '/images/njoku.png',
+    colorClass: 'blue',
   },
   {
     firstName: 'Justice',
     lastName: 'Eziefule',
     role: 'Engineering 👨🏾‍💻',
     image: '/images/justice.png',
+    colorClass: 'orange',
   },
   {
     firstName: 'Clement',
     lastName: 'Hugbo',
     role: 'Design 🎨',
     image: '/images/clement.png',
+    colorClass: 'purple',
   },
   {
     firstName: 'Joseph',
     lastName: 'Peculiar',
     role: 'Engineering 👨🏾‍💻',
     image: '/images/joseph.png',
+    colorClass: 'yellow',
   },
 ];
 
@@ -47,13 +53,15 @@ const Teams = () => {
                   </div>
                   <div className="teams__role">{team.role}</div>
                 </div>
-                <div></div>
+                <div className={`teams__link-wrapper ${team.colorClass}`}>
+                  <ArrowRightIcon />
+                </div>
               </div>
               <Image
                 key={index}
                 className="teams__image"
                 style={{ objectFit: 'contain' }}
-                width={338}
+                width={284}
                 height={300}
                 src={team.image}
                 alt="team member image"

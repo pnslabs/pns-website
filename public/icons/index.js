@@ -27,6 +27,7 @@ import GithubIcon from './github';
 import TelegramIcon from './telegram';
 import TwitterIcon from './twitter';
 import CancelIcon from './cancel-icon';
+import ArrowRightIcon from './arrow-right';
 
 export {
   LogoBlack,
@@ -58,4 +59,5 @@ export {
   TelegramIcon,
   TwitterIcon,
   CancelIcon,
+  ArrowRightIcon,
 };
