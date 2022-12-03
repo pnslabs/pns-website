@@ -96,14 +96,54 @@
       }
       &.top {
         right: 50px;
-        top: 40px;
+        // top: 40px;
         max-width: 221.79px;
         padding: 10px 14px;
+        @include keyframes(movement){
+          0% {
+            top: 10px;
+          }
+          10% {
+            top: 20px;
+          }
+          30% {
+            top: 30px;
+          }
+          50% {top: 50px}
+          70% {
+            top: 30px;
+          }
+          90%{top: 20px}
+          100% {
+            top: 10px;
+          }
+        }
+        @include animate(movement, 5s, linear, infinite);
       }
       &.bottom {
         bottom: 110px;
         max-width: 280px;
         padding: 10px 18px;
+        @include keyframes(movement-bottom){
+          0% {
+            bottom: 110px;
+          }
+          10% {
+            bottom: 90px;
+          }
+          30% {
+            bottom: 80px;
+          }
+          50% {bottom: 70px}
+          70% {
+            bottom: 80px;
+          }
+          90%{bottom: 90px}
+          100% {
+            bottom: 110px;
+          }
+        }
+        @include animate(movement-bottom, 4s, linear, infinite);
       }
     }
     &__box-sm {
@@ -123,20 +163,99 @@
           right: 40px;
           padding: 10px;
           max-width: 200px;
+          @include keyframes(movement-sm){
+            0% {
+              top: 67vh;
+            }
+            10% {
+              top: 68vh;
+            }
+            30% {
+              top: 69vh;
+            }
+            50% {top: 70vh}
+            70% {
+              top: 69vh;
+            }
+            90%{top: 68vh}
+            100% {
+              top: 67vh;
+            }
+          }
+          @include animate(movement-sm, 5s, linear, infinite);
           @include responsiveness(phone-tiny){
             top: 76vh;
             right: 30px;
             max-width: 190px;
+            @include keyframes(movement-sm){
+              0% {
+                top: 76vh;
+              }
+              10% {
+                top: 75vh;
+              }
+              30% {
+                top: 74vh;
+              }
+              50% {top: 73vh}
+              70% {
+                top: 74vh;
+              }
+              90%{top: 75vh}
+              100% {
+                top: 76vh;
+              }
+            }
+            @include animate(movement-sm, 5s, linear, infinite);
           }
+          
         }
       &.bottom {
           top: 97vh;
           padding: 23px 12px;
           max-width: 230px;
           left: 10px;
+          @include keyframes(movement-sm-bottom){
+            0% {
+              top: 97vh;
+            }
+            10% {
+              top: 98vh;
+            }
+            30% {
+              top: 99vh;
+            }
+            70% {
+              top: 99vh;
+            }
+            90%{top: 98vh}
+            100% {
+              top: 97vh;
+            }
+          }
+          @include animate(movement-sm-bottom, 5s, linear, infinite);
           @include responsiveness(phone-tiny){
             top: 107vh;
             max-width: 220px;
+            @include keyframes(movement-sm-bottom){
+              0% {
+                top: 107vh;
+              }
+              10% {
+                top: 108vh;
+              }
+              30% {
+                top: 109vh;
+              }
+              70% {
+                top: 109vh;
+              }
+              90%{top: 108vh}
+              100% {
+                top: 107vh;
+              }
+            }
+            @include animate(movement-sm-bottom, 5s, linear, infinite);
           }
       }
     }
