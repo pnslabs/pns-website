@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { ArrowRightIcon } from '../public/icons';
-import { ReactComponent as LinkSvg } from '/icons/dd.svg';
 
 const teams = [
   {
