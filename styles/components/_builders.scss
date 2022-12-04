@@ -19,6 +19,12 @@
    &__title-wrapper {
         display: flex;
         align-items: flex-start;
+        position: relative;
+   }
+
+   &__icon {
+      position: relative;
+      bottom: -5px;
    }
 
    &__title {

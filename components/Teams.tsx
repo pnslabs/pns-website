@@ -36,7 +36,8 @@ const Teams = () => {
   return (
     <div id="team" className="teams">
       <div className="container">
-        <h2 className="teams__title">Okay, The Team 😲</h2>
+        <h2 className="teams__title">Okay,</h2>
+        <h2 className="teams__title">The Team 😲</h2>
         <div className="teams__desc">
           Meet the PNS team, specialised in engineering, design. developer
           relations and more.

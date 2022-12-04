@@ -22,15 +22,22 @@
 
     &__right-wrapper {
         @include row(flex-start);
+        align-items: flex-start;
         padding-left: 38px;
         border-left: 1px solid $color-black;
         width: 72%;
         padding-bottom: 20px;
+        position: relative;
         @include responsiveness(phone){
             width: 100%;
             border-left: none;
             padding-left: 23px;
         }
+    }
+
+    &__icon {
+        position: relative;
+        bottom: 10px;
     }
 
     &__content-right-wrapper {

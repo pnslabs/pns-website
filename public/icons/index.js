@@ -29,6 +29,8 @@ import TwitterIcon from './twitter';
 import CancelIcon from './cancel-icon';
 import ArrowRightIcon from './arrow-right';
 import FaqArrowIcon from './faq-arrow';
+import GetStartedIcon from './get-started-icon';
+import BuildersIcon from './builders-icon';
 
 export {
   LogoBlack,
@@ -62,4 +64,6 @@ export {
   CancelIcon,
   ArrowRightIcon,
   FaqArrowIcon,
+  GetStartedIcon,
+  BuildersIcon,
 };

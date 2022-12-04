@@ -7,7 +7,7 @@
   }
 
   @include responsiveness(phone) {
-    margin-top: 940px;
+    margin-top: 920px;
   }
 
   @include responsiveness(phone-tiny) {
@@ -17,10 +17,6 @@
 
    &__title {
         @include title;
-        max-width: 432px;
-        @include responsiveness(phone) {
-            max-width: 75%;
-        }
     }
 
     &__desc {

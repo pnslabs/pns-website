@@ -3,6 +3,7 @@ import AnimateHeight from 'react-animate-height';
 import {
   FaqArrowIcon,
   FaqsYellowIcon,
+  GetStartedIcon,
   GetStartedOneIcon,
   GetStartedTwoIcon,
 } from '../public/icons';
@@ -53,6 +54,9 @@ const GetStarted = () => {
           </div>
           <div className="getstarted__right-wrapper">
             <h2 className="getstarted__title">Getting started</h2>
+            <div className="getstarted__icon">
+              <GetStartedIcon />
+            </div>
           </div>
         </div>
         {data.map((item, index) => (

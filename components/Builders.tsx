@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { PNSButton } from './UI';
 import image from '../public/images/code-block.png';
+import { BuildersIcon } from '../public/icons';
 
 const Builders = () => {
   return (
@@ -9,6 +10,9 @@ const Builders = () => {
         <div className="container-left">
           <div className="builders__title-wrapper">
             <h2 className="builders__title">For builders</h2>
+            <div className="builders__icon">
+              <BuildersIcon />
+            </div>
           </div>
           <div className="builders__desc">
             Start integrating PNS into your crypto wallets and applications.
