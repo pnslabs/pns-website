@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { LogoText } from '../public/icons';
+import { LogoBlackAlt, LogoText } from '../public/icons';
 import { PNSButton } from './UI';
 
 const linkItems = [
@@ -33,9 +33,13 @@ const Header = ({ handleModal }: { handleModal: () => void }) => {
     <div className={`header__wrapper${!isTop ? ' --fixed' : ''}`}>
       <div className="container">
         <header className="header">
-          <div>
+          <div className="header__logo">
             <LogoText />
           </div>
+          <div className="header__logo-sm">
+            <LogoBlackAlt />
+          </div>
+
           <nav className="header__nav">
             <ul className="header__nav-items">
               {linkItems.map(item => (

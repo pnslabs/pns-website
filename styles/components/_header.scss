@@ -8,6 +8,17 @@
   @include responsiveness(phone) {
     padding: 3.6rem 0;
   }
+  &__logo {
+    @include responsiveness(phone){
+      display: none;
+    }
+  }
+  &__logo-sm {
+    display: none;
+    @include responsiveness(phone){
+      display: block;
+    }
+  }
   &__wrapper {
     transition: all 0.3 ease-in;
     position: fixed;

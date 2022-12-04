@@ -31,6 +31,7 @@ import ArrowRightIcon from './arrow-right';
 import FaqArrowIcon from './faq-arrow';
 import GetStartedIcon from './get-started-icon';
 import BuildersIcon from './builders-icon';
+import LogoBlackAlt from './icon-black-alt';
 
 export {
   LogoBlack,
@@ -66,4 +67,5 @@ export {
   FaqArrowIcon,
   GetStartedIcon,
   BuildersIcon,
+  LogoBlackAlt,
 };
