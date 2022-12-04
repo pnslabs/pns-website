@@ -98,6 +98,17 @@
         }
     }
 
+    &__dai {
+        position: absolute;
+        bottom: -100px;
+        left: -255px;
+        z-index: 4;
+        @include responsiveness(tab-land){
+            bottom: -80px;
+            left: -95px;
+        }
+    }
+
     &__box {
         max-width: 282px;
         min-height: 55.17px;

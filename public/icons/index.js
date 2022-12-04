@@ -33,6 +33,7 @@ import GetStartedIcon from './get-started-icon';
 import BuildersIcon from './builders-icon';
 import LogoBlackAlt from './icon-black-alt';
 import UsecasePolygonIcon from './usecase-polygon';
+import UsecaseDaiIcon from './usecase-dai';
 
 export {
   LogoBlack,
@@ -70,4 +71,5 @@ export {
   BuildersIcon,
   LogoBlackAlt,
   UsecasePolygonIcon,
+  UsecaseDaiIcon,
 };

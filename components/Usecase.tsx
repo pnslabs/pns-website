@@ -16,6 +16,7 @@ import {
   BitcoinIcon,
   ConnectorIcon,
   UsecasePolygonIcon,
+  UsecaseDaiIcon,
 } from '../public/icons';
 import image from '../public/images/phone.png';
 
@@ -77,6 +78,9 @@ const Usecase = () => {
               priority={true}
               className="usecase__phone-image"
             />
+            <div className="usecase__dai">
+              <UsecaseDaiIcon />
+            </div>
           </div>
         </div>
       </div>
