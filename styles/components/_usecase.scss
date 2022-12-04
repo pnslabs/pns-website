@@ -85,26 +85,16 @@
         position: relative;
     }
 
-    &__box1 {
-        position: relative;
-        top: 95px;
-        right: 195px;
+    &__polygon {
+        position: absolute;
+        top: 10px;
+        right: 215px;
         @include responsiveness(tab-land){
-            right: 120px;
+            right: 200px;
         }
         @include responsiveness(phone){
-            top: 75px;
-            right: 20px;
-        }
-    }
-
-    &__box2 {
-        position: relative;
-        top: 125px;
-        right: 30px;
-        @include responsiveness(phone){
-            top: 90px;
-            left: 20px;
+            top: 0px;
+            right: -30px;
         }
     }
 
@@ -116,6 +106,31 @@
         backdrop-filter: blur(5px);
         border-radius: 10px;
         padding: 9.5px 11.5px;
+        &.box1 {
+            position: absolute;
+            top: 95px;
+            left: -150px;
+            @include responsiveness(tab-land){
+                left: -130px;
+            }
+            @include responsiveness(phone){
+                position: relative;
+                top: 75px;
+                left: 0;
+            }
+        }
+        &.box2 {
+            position: relative;
+            top: 185px;
+            right: 30px;
+            @include responsiveness(tab-land){
+                left: 10px;
+            }
+            @include responsiveness(phone){
+                top: 97px;
+                left: 40px;
+            }
+        }
     }
 
     &__box-text {
@@ -133,17 +148,18 @@
     &__phone-image {
         position: relative;
         z-index: 4;
-        top: 190px;
+        top: 260px;
         right: 160px;
         @include responsiveness(tab-land) {
           right: 0px;
-          top: 150px;
+          top: 270px;
           width: 100%;
         }
         @include responsiveness(tablet) {
           right: 0px;
         }
         @include responsiveness(phone) {
+            top: 170px;
           height: 500px;
           right: 0px;
         }

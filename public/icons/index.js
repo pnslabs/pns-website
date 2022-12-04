@@ -32,6 +32,7 @@ import FaqArrowIcon from './faq-arrow';
 import GetStartedIcon from './get-started-icon';
 import BuildersIcon from './builders-icon';
 import LogoBlackAlt from './icon-black-alt';
+import UsecasePolygonIcon from './usecase-polygon';
 
 export {
   LogoBlack,
@@ -68,4 +69,5 @@ export {
   GetStartedIcon,
   BuildersIcon,
   LogoBlackAlt,
+  UsecasePolygonIcon,
 };
