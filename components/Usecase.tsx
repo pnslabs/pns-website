@@ -16,7 +16,7 @@ import {
   BitcoinIcon,
   ConnectorIcon,
 } from '../public/icons';
-import image from '../public/images/phone.svg';
+import image from '../public/images/phone.png';
 
 const Usecase = () => {
   return (

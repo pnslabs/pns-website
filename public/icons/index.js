@@ -28,6 +28,7 @@ import TelegramIcon from './telegram';
 import TwitterIcon from './twitter';
 import CancelIcon from './cancel-icon';
 import ArrowRightIcon from './arrow-right';
+import FaqArrowIcon from './faq-arrow';
 
 export {
   LogoBlack,
@@ -60,4 +61,5 @@ export {
   TwitterIcon,
   CancelIcon,
   ArrowRightIcon,
+  FaqArrowIcon,
 };

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
 import {
+  FaqArrowIcon,
   FaqsYellowIcon,
   GetStartedOneIcon,
   GetStartedTwoIcon,
@@ -63,7 +64,7 @@ const GetStarted = () => {
                 index === items.length - 1 && 'noborder'
               }`}>
               <div className={`getstarted__arrow ${item.active && 'active'}`}>
-                {'>'}
+                <FaqArrowIcon color={item.active && '#000000'} />
               </div>
               <div className="getstarted__content-wrapper">
                 <div

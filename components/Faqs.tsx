@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import AnimateHeight from 'react-animate-height';
-import { FaqsBlackIcon, FaqsYellowIcon } from '../public/icons';
+import { FaqArrowIcon, FaqsBlackIcon, FaqsYellowIcon } from '../public/icons';
 
 const items = [
   {
@@ -64,7 +64,7 @@ const Faqs = () => {
                 index === items.length - 1 && 'noborder'
               }`}>
               <div className={`faqs__arrow ${item.active && 'active'}`}>
-                {'>'}
+                <FaqArrowIcon color={item.active && '#000000'} />
               </div>
               <div className="faqs__content-wrapper">
                 <div className="faqs__content-title">{item.title}</div>

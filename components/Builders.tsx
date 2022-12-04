@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { PNSButton } from './UI';
-import image from '../public/images/code-block.svg';
+import image from '../public/images/code-block.png';
 
 const Builders = () => {
   return (
