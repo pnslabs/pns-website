@@ -66,7 +66,7 @@ const Usecase = () => {
             </Box>
             <Box classname="box2">
               <div>
-                You can now transfer <span className="usecase__bold">ETH</span>{' '}
+                You can now receive <span className="usecase__bold">ETH</span>{' '}
                 and <span className="usecase__bold">SOL</span> using your mobile
                 number. 🥳
               </div>
