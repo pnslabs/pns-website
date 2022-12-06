@@ -74,7 +74,7 @@ const Usecase = () => {
             <Image
               src={image}
               alt="phone image"
-              height={662}
+              height={550}
               priority={true}
               className="usecase__phone-image"
             />

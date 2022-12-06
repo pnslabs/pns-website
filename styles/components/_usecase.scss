@@ -120,7 +120,7 @@
         &.box1 {
             position: absolute;
             top: 95px;
-            left: -150px;
+            left: -190px;
             @include responsiveness(tab-land){
                 left: -130px;
             }
