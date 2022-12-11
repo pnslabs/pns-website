@@ -1,7 +1,18 @@
 .builders {
+  margin: 170px 0;
+  position: relative;
    padding-top: 100px;
-   @include responsiveness(phone) {
+   @include responsiveness(tab-land) {
     padding-top: 70px;
+    margin-top: 80px;
+    margin-bottom: 650px;
+  }
+  @include responsiveness(tablet) {
+    margin-top: 40px;
+  }
+   @include responsiveness(phone) {
+    margin-top: 10px;
+    margin-bottom: 380px;
   }
 
    &__wrapper {
@@ -9,10 +20,6 @@
       @include responsiveness(tab-land) {
           @include column(space-between);
           align-items: flex-start;
-          margin-left: 45px;
-      }
-      @include responsiveness(phone) {
-        margin-left: 0;
       }
    }
 
@@ -42,13 +49,17 @@
     }
 
     &__image {
+      position: absolute;
+      right: 0;
         @include responsiveness(tab-land) {
           margin-top: 20px;
           width: 100%;
+          top: 330px;
         }
         @include responsiveness(phone) {
           margin-top: 50px;
           height: 300px;
+          top: 270px;
         }
       }
   }

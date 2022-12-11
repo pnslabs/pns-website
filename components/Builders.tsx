@@ -6,8 +6,8 @@ import { BuildersIcon } from '../public/icons';
 const Builders = () => {
   return (
     <div className="builders">
-      <div className="builders__wrapper">
-        <div className="container-left">
+      <div className="builders__wrapper container">
+        <div className="">
           <div className="builders__title-wrapper">
             <h2 className="builders__title">For builders</h2>
             <div className="builders__icon">
