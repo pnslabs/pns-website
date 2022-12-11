@@ -1,8 +1,51 @@
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 import { PNSButton } from './UI';
 import heroImage from '../public/images/hero-image.svg';
 
+const textStates = [
+  {
+    text: 'web3',
+    colorClass: 'black',
+  },
+  {
+    text: 'payments',
+    colorClass: 'green',
+  },
+  {
+    text: 'DeFi',
+    colorClass: 'red',
+  },
+];
+
 const Hero = ({ handleModal }: { handleModal: () => void }) => {
+  const [text, setText] = useState(textStates[0]);
+  const [textIndex, setTextIndex] = useState(0);
+  const [leaving, setLeaving] = useState(false);
+
+  const toggleText = () => {
+    setTimeout(() => {
+      setLeaving(false);
+      if (textIndex === textStates.length - 1) {
+        setTextIndex(0);
+        setText(textStates[0]);
+      } else {
+        setTextIndex(textIndex + 1);
+        setText(textStates[textIndex + 1]);
+      }
+    }, 3000);
+  };
+
+  const toggleTextLeaving = () => {
+    setTimeout(() => {
+      setLeaving(true);
+    }, 2200);
+  };
+
+  useEffect(() => {
+    toggleTextLeaving();
+    toggleText();
+  }, [textIndex]);
   return (
     <>
       <div className="hero">
@@ -10,7 +53,14 @@ const Hero = ({ handleModal }: { handleModal: () => void }) => {
           <div className="hero__wrapper">
             <div className="hero__content">
               <h1 className="hero__title">
-                Unlock the power of Web3 with your mobile phone.
+                Unlock the power of{' '}
+                <span
+                  className={`hero__text ${text.colorClass} ${
+                    leaving && 'leaving'
+                  }`}>
+                  {text.text}
+                </span>{' '}
+                with your mobile phone.
               </h1>
               <h6 className="hero__desc">
                 The PNS protocol is a chain agnostic smart contract that

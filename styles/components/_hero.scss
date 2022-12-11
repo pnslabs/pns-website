@@ -38,6 +38,40 @@
         @include title;
     }
 
+    &__text {
+      &.black {
+        color: $color-black;
+        @include keyframes(fadeInBlack){
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @include animate(fadeInBlack, 1.5s, ease, 1);
+      }
+      &.green {
+        color: #00BFA6;
+        @include keyframes(fadeInGreen){
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @include animate(fadeInGreen, 1.5s, ease, 1);
+      }
+      &.red {
+        color: #FF0000;
+        @include keyframes(fadeInRed){
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @include animate(fadeInRed, 1.5s, ease, 1);
+      }
+      &.leaving {
+        @include keyframes(fadeOut){
+          0% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+        @include animate(fadeOut, 1.5s, ease, 1);
+      }
+    }
+
     &__desc {
         @include text;
         max-width: 97%;
