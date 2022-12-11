@@ -21,6 +21,12 @@ const linkItems = [
 
 const Header = ({ handleModal }: { handleModal: () => void }) => {
   const [isTop, setIsTop] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleMenu = (status?: boolean) => {
+    setIsMenuOpen(status || !isMenuOpen);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 30) {
@@ -46,32 +52,69 @@ const Header = ({ handleModal }: { handleModal: () => void }) => {
           </div>
 
           <nav className="header__nav">
-            <ul className="header__nav-items">
-              {linkItems.map(item => (
-                <li key={item.name} className="header__nav-item">
-                  <ScrollLink
-                    to={item.link}
-                    className="header__nav-links"
-                    spy={true}
-                    smooth={true}
-                    offset={-300}
-                    duration={500}>
-                    {item.name}
-                  </ScrollLink>
-                  {item.children && (
-                    <div className="header__arrow">
-                      <FaqArrowIcon color="#A3A3A3" />
-                    </div>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <Items />
           </nav>
-          <PNSButton onClick={handleModal} text="Join Waitlist" />
+          <div className="header__btn">
+            <PNSButton onClick={handleModal} text="Join Waitlist" />
+          </div>
+          <div onClick={() => handleMenu()} className="header__hamburger">
+            {Array.apply(null, Array(3)).map((_, index) => (
+              <div key={index} className="header__hamburger-line" />
+            ))}
+          </div>
         </header>
       </div>
+
+      <MobileHeader handleMenu={handleMenu} isOpen={isMenuOpen} />
     </div>
   );
 };
 
 export default Header;
+
+const MobileHeader = ({
+  handleMenu,
+  isOpen,
+}: {
+  handleMenu: () => void;
+  isOpen: boolean;
+}) => {
+  return (
+    <>
+      <div className={`header__mobile ${isOpen ? 'fade-in' : 'fade-out'}`}>
+        <div onClick={handleMenu} className="header__hamburger-line-mobile">
+          X
+        </div>
+        <nav>
+          <Items hideMenu={() => handleMenu(false)} />
+        </nav>
+      </div>
+    </>
+  );
+};
+
+const Items = ({ hideMenu }: { hideMenu?: () => void }) => {
+  return (
+    <ul className="header__nav-items mobile">
+      {linkItems.map(item => (
+        <li key={item.name} className="header__nav-item mobile">
+          <ScrollLink
+            to={item.link}
+            className="header__nav-links"
+            spy={true}
+            smooth={true}
+            offset={-300}
+            duration={500}
+            onClick={hideMenu}>
+            {item.name}
+          </ScrollLink>
+          {item.children && (
+            <div className="header__arrow">
+              <FaqArrowIcon color="#A3A3A3" />
+            </div>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+};
