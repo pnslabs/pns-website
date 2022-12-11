@@ -35,12 +35,6 @@
     &.--fixed {
       background: $color-white;
       box-shadow: 1px 1px 3px 0px rgba(0, 0, 0, 0.15);
-      & .header {
-        padding: 1.5rem;
-        @include responsiveness(phone) {
-          padding: 0.8rem 0;
-        }
-      }
     }
   }
   &__nav {
@@ -56,8 +50,15 @@
     display: flex;
     align-items: center;
   }
+  &__nav-item {
+    @include row(center);
+  }
   &__nav-item:not(:last-child) {
     margin-right: 36px;
+  }
+  &__arrow {
+    margin-left: 8.17px;
+    transform: rotate(90deg); 
   }
   &__nav-links {
     font-size: 16px;
