@@ -65,7 +65,9 @@ const Header = ({ handleModal }: { handleModal: () => void }) => {
         </header>
       </div>
 
-      <MobileHeader handleMenu={handleMenu} isOpen={isMenuOpen} />
+      {isMenuOpen && (
+        <MobileHeader handleMenu={handleMenu} isOpen={isMenuOpen} />
+      )}
     </div>
   );
 };
@@ -76,13 +78,15 @@ const MobileHeader = ({
   handleMenu,
   isOpen,
 }: {
-  handleMenu: () => void;
+  handleMenu: (status?: boolean) => void;
   isOpen: boolean;
 }) => {
   return (
     <>
       <div className={`header__mobile ${isOpen ? 'fade-in' : 'fade-out'}`}>
-        <div onClick={handleMenu} className="header__hamburger-line-mobile">
+        <div
+          onClick={() => handleMenu()}
+          className="header__hamburger-line-mobile">
           X
         </div>
         <nav>

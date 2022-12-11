@@ -5,6 +5,9 @@
     @include responsiveness(tab-land){
         margin-top: 120px;
     }  
+    @include responsiveness(phone-tiny){
+        margin-top: 180px;
+    } 
 
     &__wrapper {
         @include row(flex-start);
