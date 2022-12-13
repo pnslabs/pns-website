@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { LogoBlackAlt, LogoText } from '../public/icons';
 import { PNSButton } from './UI';
-import { FaqArrowIcon } from '../public/icons';
 
 const communityChildren = [
   { name: 'Discord', link: 'https://discord.gg/6Z2Y4Z8' },
@@ -112,11 +111,6 @@ const Items = ({ hideMenu }: { hideMenu?: () => void }) => {
             onClick={hideMenu}>
             {item.name}
           </ScrollLink>
-          {item.children && (
-            <div className="header__arrow">
-              <FaqArrowIcon color="#A3A3A3" />
-            </div>
-          )}
         </li>
       ))}
     </ul>
