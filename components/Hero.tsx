@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { PNSButton } from './UI';
-import heroImage from '../public/images/hero-image.svg';
+import heroImage from '../public/images/hero-image.png';
 
 const textStates = [
   {
