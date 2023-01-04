@@ -7,6 +7,7 @@ import Faqs from './Faqs';
 import GetStarted from './GetStarted';
 import Footer from './Footer';
 import Communities from './Communities';
+import Notification from './Notification';
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   GetStarted,
   Footer,
   Communities,
+  Notification,
 };

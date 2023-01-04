@@ -1,0 +1,49 @@
+.notification {
+  padding: 5px 0 140px 0;
+  &__title {
+    max-width: 50%;
+    @include title;
+    @include responsiveness(tab-land) {
+      max-width: 100%;
+    }
+    @include responsiveness(phone) {
+     padding-right: 20px;
+    }
+  }
+  &__desc {
+    @include text;
+    margin-top: 20px;
+    max-width: 53%;
+    @include responsiveness(tab-land) {
+      max-width: none;
+    }
+  }
+  &__items {
+    margin-top: 120px;
+    @include row(space-between);
+    gap: 30px;
+    width: 100%;
+    @include responsiveness(tablet) {
+      @include column(center);
+    }
+    @include responsiveness(phone) {
+      margin-top: 80px;
+    }
+  }
+  &__item {
+    padding: 27px 32px;
+    border-radius: 30px;
+    border: 1px solid $color-border-gray;
+  }
+  &__item-title {
+    font-family: $font-secondary;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 120%;
+  }
+  &__item-desc {
+    @include text;
+    margin-top: 40px;
+  }
+}
+  

@@ -13,6 +13,7 @@ import {
   GetStarted,
   Footer,
   Communities,
+  Notification,
 } from '../components';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import { CancelIcon } from '../public/icons';
@@ -29,6 +30,7 @@ export default function Home() {
       <Hero handleModal={handleModal} />
       <GetStarted />
       <Builders />
+      <Notification />
       <Usecase />
       <Teams />
       <Faqs />
