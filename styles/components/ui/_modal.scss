@@ -45,7 +45,6 @@
     }
 
     &__desktop-child {
-        padding-bottom: 20px;
         overflow-y: auto;
     }
 
@@ -93,14 +92,14 @@
     }
     &__image {
         width: 100%;
-        height: 49px;
+        height: 70px;
         margin-top: 41px;
         background-image: url('/images/shapes.svg');
         background-position: center;
-        background-size: contain;
-        background-repeat: repeat;
+        background-size: cover;
+        background-repeat: no-repeat;
         @include responsiveness(phone){
-            height: 30px;
+            height: 37px;
         }
     }
     &__button-wrapper {
