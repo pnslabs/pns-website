@@ -18,6 +18,7 @@ interface IPNSButton {
   onClick?: () => void;
   hasIcon?: boolean;
   fullWidth?: boolean;
+  disabled?: boolean;
 }
 const PNSButton = ({
   text,
@@ -26,10 +27,12 @@ const PNSButton = ({
   onClick,
   hasIcon = true,
   fullWidth = false,
+  disabled,
 }: IPNSButton) => {
   return (
     <>
       <button
+        disabled={disabled}
         type={type}
         className={`button ${variant} ${fullWidth && 'full'}`}
         onClick={onClick}>

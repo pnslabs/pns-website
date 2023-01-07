@@ -106,7 +106,8 @@
     &__button-wrapper {
         margin-top: 50px;
     }
-    &__hover {
+    &__icon {
         cursor: pointer;
+        @include row(flex-end);
     }
 }

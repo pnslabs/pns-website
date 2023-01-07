@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import {
@@ -17,6 +18,7 @@ import {
 } from '../components';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import { CancelIcon } from '../public/icons';
+import { butonTypes } from '../components/UI/PNSButton';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -47,46 +49,56 @@ export default function Home() {
 
 const schema = yup.object().shape({
   email: yup.string().email('Email is Invalid').required('Email is required'),
-  first_name: yup.string().required('First name is required'),
-  last_name: yup.string().required('Last name is required'),
+  firstname: yup.string().required('First name is required'),
+  lastname: yup.string().required('Last name is required'),
 });
 
 const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
+  const [btnText, setBtnText] = useState('Join Waitlist');
+  const [isDisabled, setIsDisabled] = useState(false);
+
   const {
     register,
     handleSubmit,
-    watch,
-    formState: { errors, isValid },
+    formState: { errors },
   } = useForm<any>({
     mode: 'all',
     resolver: yupResolver(schema),
   });
+
+  const onSubmit = async (values: any) => {
+    setBtnText('Sending...');
+    setIsDisabled(true);
+    const url = `https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe`;
+    await axios.post(url, values);
+    setBtnText("Success, you're now on the waitlist");
+  };
   return (
     <div>
+      <div onClick={handleModal} className="modal__icon">
+        <CancelIcon />
+      </div>
       <div className="modal__header">
         <h2 className="modal__title">Get early access. 😎</h2>
-        <div onClick={handleModal} className="modal__hover">
-          <CancelIcon />
-        </div>
       </div>
       <div className="modal__desc">
         Join our waitlist and community to be among the first to know when we
         launch our product 🚀
       </div>
-      <form className="modal__form">
+      <form onSubmit={handleSubmit(onSubmit)} className="modal__form">
         <div className="modal__input-wrapper">
           <PNSInput
-            name="first_name"
+            name="firstname"
             label="First name"
-            register={register('first_name')}
-            error={errors.first_name?.message}
+            register={register('firstname')}
+            error={errors.firstname?.message}
             placeholder="John"
           />
           <PNSInput
-            name="last_name"
+            name="lastname"
             label="Last name"
-            register={register('last_name')}
-            error={errors.last_name?.message}
+            register={register('lastname')}
+            error={errors.lastname?.message}
             placeholder="Doe"
           />
         </div>
@@ -103,7 +115,9 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
             fullWidth
             hasIcon={false}
             onClick={() => {}}
-            text="Join Waitlist"
+            text={btnText}
+            disabled={isDisabled}
+            type={butonTypes.submit}
           />
         </div>
         <div className="modal__image" />
