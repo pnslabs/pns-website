@@ -100,7 +100,7 @@ export default function Home() {
           {/* <div className="home__img" /> */}
           <Image
             priority={true}
-            height={310}
+            height={337}
             width={850}
             src={heroImage}
             alt="sample"

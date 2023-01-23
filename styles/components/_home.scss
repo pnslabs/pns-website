@@ -30,7 +30,7 @@
 
     &__nav {
         @include row(space-between);
-        padding-top: 57.5px;
+        padding-top: 51.5px;
         @include responsiveness(phone) {
             padding-top: 30px;
         }
@@ -70,7 +70,7 @@
     }
 
     &__title-wrapper {
-        padding-top: 49px;
+        padding-top: 37px;
         @include column(center);
         @include responsiveness(tab-land) {
             padding-top: 100px;
@@ -82,16 +82,17 @@
 
     &__title {
         font-weight: 700;
-        font-size: 100px;
-        line-height: 100.5%;
+        font-size: 80px;
+        line-height: 110.5%;
         color: $color-white;
-        max-width: 70%;
+        max-width: 60%;
         text-align: center;
         font-family: $font-secondary;
         @include responsiveness(tab-land) {
-            max-width: 100%;
+            max-width: 80%;
         }
         @include responsiveness(phone) {
+            max-width: 100%;
             line-height: 110.5%;
             font-size: 40px;
         }
@@ -106,17 +107,25 @@
 
     &__title-desc {
         margin-top: 20px;
-        @include text;
-        color: #ACACAC;
-        max-width: 50%;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 29px;
         text-align: center;
+        color: #ACACAC;
+        max-width: 53%;
+        text-align: center;
+        font-family: $font-secondary;
         @include responsiveness(tab-land) {
+            max-width: 80%;
+        }
+        @include responsiveness(phone) {
             max-width: 100%;
+            font-size: 16px;
         }
     }
 
     &__button-wrapper {
-        margin-top: 30px;
+        margin-top: 38px;
         @include row(center);
         @include responsiveness(phone) {
             margin-top: 40px;
