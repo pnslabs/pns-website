@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -38,12 +38,55 @@ const links = [
   },
 ];
 
+const textStates = [
+  {
+    text: 'Web3',
+    colorClass: 'red',
+  },
+  {
+    text: 'DeFi',
+    colorClass: 'green',
+  },
+  {
+    text: 'Payments',
+    colorClass: 'yellow',
+  },
+];
+
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [text, setText] = useState(textStates[0]);
+  const [textIndex, setTextIndex] = useState(0);
+  const [leaving, setLeaving] = useState(false);
 
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
+
+  const toggleText = () => {
+    setTimeout(() => {
+      setLeaving(false);
+      if (textIndex === textStates.length - 1) {
+        setTextIndex(0);
+        setText(textStates[0]);
+      } else {
+        setTextIndex(textIndex + 1);
+        setText(textStates[textIndex + 1]);
+      }
+    }, 3000);
+  };
+
+  const toggleTextLeaving = () => {
+    setTimeout(() => {
+      setLeaving(true);
+    }, 2200);
+  };
+
+  useEffect(() => {
+    toggleTextLeaving();
+    toggleText();
+  }, [textIndex]);
+
   return (
     <>
       {/* <Header handleModal={handleModal} />
@@ -62,28 +105,37 @@ export default function Home() {
         children={<ModalBody handleModal={handleModal} />}
       /> */}
       <div className="home">
+        <nav className="home__nav container">
+          <div className="home__logo">
+            <LogoWhite />
+            <div>
+              <h3 className="home__logo-title">Phone Number</h3>
+              <h3 className="home__logo-title">Service</h3>
+            </div>
+          </div>
+          <div className="home__nav-links">
+            {links.map((item, index) => (
+              <Link key={index} href={item.link}>
+                <div className="home__nav-link">{item.icon}</div>
+              </Link>
+            ))}
+          </div>
+        </nav>
         <div className="home__wrapper container">
           <div>
-            <nav className="home__nav">
-              <div className="home__logo">
-                <LogoWhite />
-                <div>
-                  <h3 className="home__logo-title">Phone Number</h3>
-                  <h3 className="home__logo-title">Service</h3>
-                </div>
-              </div>
-              <div className="home__nav-links">
-                {links.map((item, index) => (
-                  <Link key={index} href={item.link}>
-                    <div className="home__nav-link">{item.icon}</div>
-                  </Link>
-                ))}
-              </div>
-            </nav>
             <div className="home__title-wrapper">
-              <h1 className="home__title">
-                Mobile Phone Number <span>+</span>
-                <span className="home__title-sub"> Web3</span>
+              <h1 className="home__title">Mobile Phone</h1>
+              <h1 className="home__title sub">
+                <div>
+                  {' '}
+                  Number <span>+</span>
+                </div>
+                <div
+                  className={`home__title-sub ${text.colorClass} ${
+                    leaving && 'leaving'
+                  }`}>
+                  {text.text}
+                </div>
               </h1>
               <p className="home__title-desc">
                 The PNS protocol is a chain agnostic smart contract that enables
@@ -97,10 +149,9 @@ export default function Home() {
               </button>
             </div>
           </div>
-          {/* <div className="home__img" /> */}
           <Image
             priority={true}
-            height={337}
+            height={317}
             width={850}
             src={heroImage}
             alt="sample"

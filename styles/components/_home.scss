@@ -29,7 +29,10 @@
     }
 
     &__nav {
+        height: 10vh;
         @include row(space-between);
+        position: relative;
+        z-index: 3;
         padding-top: 51.5px;
         @include responsiveness(phone) {
             padding-top: 30px;
@@ -49,7 +52,7 @@
     &__wrapper {
         position: relative;
         z-index: 3;
-        height: 100%;
+        height: 90vh;
         @include column(space-between);
     }
 
@@ -88,21 +91,67 @@
         max-width: 60%;
         text-align: center;
         font-family: $font-secondary;
+        &.sub {
+            max-width: 90%;
+            @include row(flex-start);
+            gap: 20px;
+            @include responsiveness(phone) {
+                max-width: 100%;
+            }
+        }
         @include responsiveness(tab-land) {
             max-width: 80%;
+        }
+        @include responsiveness(tablet) {
+            font-size: 55px;
         }
         @include responsiveness(phone) {
             max-width: 100%;
             line-height: 110.5%;
-            font-size: 40px;
+            font-size: 35px;
         }
         @include responsiveness(phone-tiny) {
-            font-size: 35px;
+            font-size: 32px;
         }
     }
 
     &__title-sub {
-        color: #FF4D6A;
+        width: 200px;
+        @include responsiveness(phone) {
+            width: 160px;
+        }
+        text-align: left;
+        &.red {
+            color: #FF4D6A;
+            @include keyframes(fadeInRed){
+                0% { opacity: 0; transform: scale(.3); }
+                100% { opacity: 1; transform: scale(1.05);}
+            }
+            @include animate(fadeInRed, 1.5s, ease, 1);
+        }
+        &.green {
+            color: #7CFFA0;
+            @include keyframes(fadeInGreen){
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @include animate(fadeInGreen, 1.5s, ease, 1);
+        }
+        &.yellow {
+            color: #FFCB4B;
+            @include keyframes(fadeInYellow){
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+            @include animate(fadeInYellow, 1.5s, ease, 1);
+        }
+        &.leaving {
+            @include keyframes(fadeOut){
+              0% { opacity: 1; }
+              100% { opacity: 0; }
+            }
+            @include animate(fadeOut, 1.5s, ease, 1);
+          }
     }
 
     &__title-desc {
