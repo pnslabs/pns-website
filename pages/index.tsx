@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
 import heroImage from '../public/images/hero-img.png';
+import AnimatedText from 'react-animated-text-content';
 
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import {
@@ -57,7 +58,6 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [text, setText] = useState(textStates[0]);
   const [textIndex, setTextIndex] = useState(0);
-  const [leaving, setLeaving] = useState(false);
 
   const handleModal = () => {
     setIsModalOpen(!isModalOpen);
@@ -65,7 +65,6 @@ export default function Home() {
 
   const toggleText = () => {
     setTimeout(() => {
-      setLeaving(false);
       if (textIndex === textStates.length - 1) {
         setTextIndex(0);
         setText(textStates[0]);
@@ -76,14 +75,7 @@ export default function Home() {
     }, 3000);
   };
 
-  const toggleTextLeaving = () => {
-    setTimeout(() => {
-      setLeaving(true);
-    }, 2200);
-  };
-
   useEffect(() => {
-    toggleTextLeaving();
     toggleText();
   }, [textIndex]);
 
@@ -130,11 +122,15 @@ export default function Home() {
                   {' '}
                   Number <span>+</span>
                 </div>
-                <div
-                  className={`home__title-sub ${text.colorClass} ${
-                    leaving && 'leaving'
-                  }`}>
-                  {text.text}
+
+                <div className={`home__title-sub ${text.colorClass}`}>
+                  <AnimatedText
+                    animationType="bounce"
+                    interval={0.06}
+                    duration={0.8}
+                    type="words">
+                    {text.text}
+                  </AnimatedText>
                 </div>
               </h1>
               <p className="home__title-desc">

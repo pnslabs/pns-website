@@ -94,7 +94,7 @@
         &.sub {
             max-width: 90%;
             @include row(flex-start);
-            gap: 20px;
+            gap: 10px;
             @include responsiveness(phone) {
                 max-width: 100%;
             }
@@ -117,41 +117,19 @@
 
     &__title-sub {
         width: 200px;
+        text-align: left;
         @include responsiveness(phone) {
             width: 160px;
         }
-        text-align: left;
         &.red {
             color: #FF4D6A;
-            @include keyframes(fadeInRed){
-                0% { opacity: 0; transform: scale(.3); }
-                100% { opacity: 1; transform: scale(1.05);}
-            }
-            @include animate(fadeInRed, 1.5s, ease, 1);
         }
         &.green {
             color: #7CFFA0;
-            @include keyframes(fadeInGreen){
-                0% { opacity: 0; }
-                100% { opacity: 1; }
-            }
-            @include animate(fadeInGreen, 1.5s, ease, 1);
         }
         &.yellow {
             color: #FFCB4B;
-            @include keyframes(fadeInYellow){
-                0% { opacity: 0; }
-                100% { opacity: 1; }
-            }
-            @include animate(fadeInYellow, 1.5s, ease, 1);
         }
-        &.leaving {
-            @include keyframes(fadeOut){
-              0% { opacity: 1; }
-              100% { opacity: 0; }
-            }
-            @include animate(fadeOut, 1.5s, ease, 1);
-          }
     }
 
     &__title-desc {
