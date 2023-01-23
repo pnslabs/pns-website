@@ -8,14 +8,14 @@ const ButtonArrow = () => {
       xmlns="http://www.w3.org/2000/svg">
       <path
         d="M3.5 13L11.5 5"
-        stroke="white"
+        stroke="#40020C"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
       <path
         d="M5.5 4H12.1667V10.6667"
-        stroke="white"
+        stroke="#40020C"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

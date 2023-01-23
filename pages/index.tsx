@@ -3,22 +3,40 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
+import heroImage from '../public/images/hero-img.png';
 
-import {
-  Builders,
-  Header,
-  Hero,
-  Usecase,
-  Teams,
-  Faqs,
-  GetStarted,
-  Footer,
-  Communities,
-  Notification,
-} from '../components';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
-import { CancelIcon } from '../public/icons';
+import {
+  ButtonArrow,
+  CancelIcon,
+  Discord,
+  Github,
+  LogoWhite,
+  Telegram,
+  Twitter,
+} from '../public/icons';
 import { butonTypes } from '../components/UI/PNSButton';
+import Link from 'next/link';
+import Image from 'next/image';
+
+const links = [
+  {
+    link: 'https://www.pns.network/',
+    icon: <Discord />,
+  },
+  {
+    link: 'https://www.pns.network/',
+    icon: <Twitter />,
+  },
+  {
+    link: 'https://www.pns.network/',
+    icon: <Github />,
+  },
+  {
+    link: 'https://www.pns.network/',
+    icon: <Telegram />,
+  },
+];
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,7 +46,7 @@ export default function Home() {
   };
   return (
     <>
-      <Header handleModal={handleModal} />
+      {/* <Header handleModal={handleModal} />
       <Hero handleModal={handleModal} />
       <GetStarted />
       <Builders />
@@ -37,12 +55,61 @@ export default function Home() {
       <Teams />
       <Faqs />
       <Communities />
-      <Footer />
-      <PNSModal
+      <Footer /> */}
+      {/* <PNSModal
         onClose={handleModal}
         isOpen={isModalOpen}
         children={<ModalBody handleModal={handleModal} />}
-      />
+      /> */}
+      <div className="home">
+        <div className="home__wrapper container">
+          <div>
+            <nav className="home__nav">
+              <div className="home__logo">
+                <LogoWhite />
+                <div>
+                  <h3 className="home__logo-title">Phone Number</h3>
+                  <h3 className="home__logo-title">Service</h3>
+                </div>
+              </div>
+              <div className="home__nav-links">
+                {links.map((item, index) => (
+                  <Link key={index} href={item.link}>
+                    <div className="home__nav-link">{item.icon}</div>
+                  </Link>
+                ))}
+              </div>
+            </nav>
+            <div className="home__title-wrapper">
+              <h1 className="home__title">
+                Mobile Phone Number <span>+</span>
+                <span className="home__title-sub"> Web3</span>
+              </h1>
+              <p className="home__title-desc">
+                The PNS protocol is a chain agnostic smart contract that enables
+                the seamless transfer of cryptocurrency using a phone number.
+              </p>
+            </div>
+            <div className="home__button-wrapper">
+              <button className="home__button" onClick={handleModal}>
+                <div className="home__button-text">Join Waitlist</div>
+                <ButtonArrow />
+              </button>
+            </div>
+          </div>
+          {/* <div className="home__img" /> */}
+          <Image
+            priority={true}
+            height={310}
+            width={850}
+            src={heroImage}
+            alt="sample"
+            className="home__img"
+          />
+        </div>
+      </div>
+      <div className="home__bg-image" />
+      <div className="home__bg-image2" />
     </>
   );
 }

@@ -34,6 +34,10 @@ import BuildersIcon from './builders-icon';
 import LogoBlackAlt from './icon-black-alt';
 import UsecasePolygonIcon from './usecase-polygon';
 import UsecaseDaiIcon from './usecase-dai';
+import Discord from './_discord';
+import Github from './_github';
+import Telegram from './_telegram';
+import Twitter from './_twitter';
 
 export {
   LogoBlack,
@@ -72,4 +76,8 @@ export {
   LogoBlackAlt,
   UsecasePolygonIcon,
   UsecaseDaiIcon,
+  Discord,
+  Github,
+  Telegram,
+  Twitter,
 };

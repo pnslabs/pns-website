@@ -1,0 +1,158 @@
+.home {
+    height: 100vh;
+    background: $color-home-bg;
+
+    &__bg-image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        background-image: url('/images/bg.svg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat;
+        height: 100%;
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    &__bg-image2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+        background-image: url('/images/rectangle.svg');
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__nav {
+        @include row(space-between);
+        padding-top: 57.5px;
+        @include responsiveness(phone) {
+            padding-top: 30px;
+        }
+    }
+
+    &__logo {
+        @include row(center);
+        gap: 12px;
+    }
+
+    &__logo-title {
+        color: $color-white;
+        font-weight: 400;
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        @include column(space-between);
+    }
+
+    &__nav-links {
+        @include row(center);
+        gap: 12px;
+        @include responsiveness(phone){
+            display: none;
+        }
+    }
+
+    &__nav-link {
+        @include row(center);
+        padding: 10px;
+        width: 50px;
+        height: 49px;
+        background: rgba(255, 77, 106, 0.1);
+    }
+
+    &__title-wrapper {
+        padding-top: 49px;
+        @include column(center);
+        @include responsiveness(tab-land) {
+            padding-top: 100px;
+        }
+        @include responsiveness(phone-tiny) {
+            padding-top: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 100px;
+        line-height: 100.5%;
+        color: $color-white;
+        max-width: 70%;
+        text-align: center;
+        font-family: $font-secondary;
+        @include responsiveness(tab-land) {
+            max-width: 100%;
+        }
+        @include responsiveness(phone) {
+            line-height: 110.5%;
+            font-size: 40px;
+        }
+        @include responsiveness(phone-tiny) {
+            font-size: 35px;
+        }
+    }
+
+    &__title-sub {
+        color: #FF4D6A;
+    }
+
+    &__title-desc {
+        margin-top: 20px;
+        @include text;
+        color: #ACACAC;
+        max-width: 50%;
+        text-align: center;
+        @include responsiveness(tab-land) {
+            max-width: 100%;
+        }
+    }
+
+    &__button-wrapper {
+        margin-top: 30px;
+        @include row(center);
+        @include responsiveness(phone) {
+            margin-top: 40px;
+        }
+        @include responsiveness(phone-tiny) {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__button {
+        @include row(center);
+        padding: 16px 30px;
+        height: 50px;
+        background: #86303E;
+        border: 1px solid #FF4D6A;
+        gap: 7.5px;
+        cursor: pointer;
+    }
+
+    &__button-text {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #40020C;
+        font-family: $font-secondary;
+    }
+
+    &__img {
+        object-fit: contain;
+        @include responsiveness(tab-land) {
+            width: 90%;
+        }
+        @include responsiveness(phone) {
+            width: 90%;
+            object-fit: fill;
+        }
+    }
+}
