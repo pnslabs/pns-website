@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -56,6 +56,8 @@ const textStates = [
 ];
 
 export default function Home() {
+  const div = useRef(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [text, setText] = useState(textStates[0]);
   const [textIndex, setTextIndex] = useState(0);
@@ -82,13 +84,13 @@ export default function Home() {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.from('.home__logo', { duration: 0.6, y: 25, opacity: 0 });
       gsap.from('.home__nav-link', {
         duration: 0.4,
         y: 25,
         opacity: 0,
         stagger: 0.2,
       });
-      gsap.from('.home__logo', { duration: 0.6, y: 25, opacity: 0 });
 
       const tl = gsap.timeline({});
 
@@ -105,29 +107,19 @@ export default function Home() {
           opacity: 0,
           y: 150,
         });
-    });
+    }, div);
 
     return () => ctx.revert();
   }, []);
 
   return (
     <>
-      {/* <Header handleModal={handleModal} />
-      <Hero handleModal={handleModal} />
-      <GetStarted />
-      <Builders />
-      <Notification />
-      <Usecase />
-      <Teams />
-      <Faqs />
-      <Communities />
-      <Footer /> */}
       {/* <PNSModal
         onClose={handleModal}
         isOpen={isModalOpen}
         children={<ModalBody handleModal={handleModal} />}
       /> */}
-      <div className="home">
+      <div ref={div} className="home">
         <nav className="home__nav container">
           <div className="home__logo">
             <LogoWhite />
