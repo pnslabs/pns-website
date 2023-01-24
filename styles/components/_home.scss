@@ -94,7 +94,7 @@
         &.sub {
             max-width: 90%;
             @include row(flex-start);
-            gap: 10px;
+            gap: 15px;
             @include responsiveness(phone) {
                 max-width: 100%;
             }
@@ -116,7 +116,6 @@
     }
 
     &__title-sub {
-        width: 200px;
         text-align: left;
         @include responsiveness(phone) {
             width: 160px;
@@ -190,5 +189,8 @@
             width: 90%;
             object-fit: fill;
         }
+    }
+    &__num {
+        transition: width 0.3s ease-in-out;
     }
 }

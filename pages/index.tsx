@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -19,6 +19,7 @@ import {
 import { butonTypes } from '../components/UI/PNSButton';
 import Link from 'next/link';
 import Image from 'next/image';
+import { gsap } from 'gsap';
 
 const links = [
   {
@@ -79,6 +80,36 @@ export default function Home() {
     toggleText();
   }, [textIndex]);
 
+  useLayoutEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.home__nav-link', {
+        duration: 0.4,
+        y: 25,
+        opacity: 0,
+        stagger: 0.2,
+      });
+      gsap.from('.home__logo', { duration: 0.6, y: 25, opacity: 0 });
+
+      const tl = gsap.timeline({});
+
+      tl.from('.first', { delay: 0.6, duration: 0.2, opacity: 0, y: 10 })
+        .from('.sub', {
+          duration: 0.25,
+          opacity: 0,
+          y: 25,
+        })
+        .from('.home__title-desc', { duration: 0.4, opacity: 0, y: 45 })
+        .from('.home__button-wrapper', { duration: 0.3, opacity: 0, y: 45 })
+        .from('.home__img', {
+          duration: 0.3,
+          opacity: 0,
+          y: 150,
+        });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
     <>
       {/* <Header handleModal={handleModal} />
@@ -116,18 +147,18 @@ export default function Home() {
         <div className="home__wrapper container">
           <div>
             <div className="home__title-wrapper">
-              <h1 className="home__title">Mobile Phone</h1>
+              <h1 className="home__title first">Mobile Phone</h1>
               <h1 className="home__title sub">
-                <div>
+                <div className="home__num">
                   {' '}
                   Number <span>+</span>
                 </div>
 
                 <div className={`home__title-sub ${text.colorClass}`}>
                   <AnimatedText
-                    animationType="bounce"
+                    animationType="blocks"
                     interval={0.06}
-                    duration={0.8}
+                    duration={0.5}
                     type="words">
                     {text.text}
                   </AnimatedText>
