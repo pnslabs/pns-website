@@ -222,7 +222,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   const onSubmit = async (values: any) => {
     setBtnText('Sending...');
     setIsDisabled(true);
-    const url = `https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe`;
+    const url = process.env.NEXT_PUBLIC_SERVER_URL!;
     await axios.post(url, { ...values, googleCaptcha: '' });
     setBtnText("Success, you're now on the waitlist");
   };
@@ -268,7 +268,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           placeholder="codemathics@pns.foundation"
         />
         <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
+          sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}
           onChange={onChange}
           onErrored={() => setValue('googleCaptcha', '')}
         />
