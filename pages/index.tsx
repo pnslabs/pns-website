@@ -230,6 +230,8 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   const onChange = (value: any) => {
     setValue('googleCaptcha', value);
   };
+
+  console.log('jdjhjhdjhdhjhdjhd', process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY);
   return (
     <div>
       <div onClick={handleModal} className="modal__icon">
@@ -270,7 +272,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
         <ReCAPTCHA
           sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}
           onChange={onChange}
-          onErrored={() => setValue('googleCaptcha', '')}
+          // onErrored={() => setValue('googleCaptcha', '')}
         />
         <div className="modal__button-wrapper">
           <PNSButton
