@@ -233,8 +233,8 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
 
   console.log(
     'jbdjhjdhjdjgjhgjhg hd',
-    process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY,
-    process.env.NEXT_PUBLIC_SERVER_URL
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!,
+    process.env.NEXT_PUBLIC_SERVER_URL!
   );
 
   return (
@@ -275,7 +275,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           placeholder="codemathics@pns.foundation"
         />
         <ReCAPTCHA
-          sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+          sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}
           onChange={onChange}
           onErrored={() => setValue('googleCaptcha', '')}
         />
