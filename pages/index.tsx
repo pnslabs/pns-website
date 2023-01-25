@@ -134,11 +134,11 @@ export default function Home() {
 
   return (
     <>
-      {/* <PNSModal
+      <PNSModal
         onClose={handleModal}
         isOpen={isModalOpen}
         children={<ModalBody handleModal={handleModal} />}
-      /> */}
+      />
       <div ref={div} className="home">
         <nav className="home__nav container">
           <div className="home__logo">
@@ -229,7 +229,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
         <CancelIcon />
       </div>
       <div className="modal__header">
-        <h2 className="modal__title">Get early access. 😎</h2>
+        <h2 className="modal__title">Get early access.</h2>
       </div>
       <div className="modal__desc">
         Join our waitlist and community to be among the first to know when we
