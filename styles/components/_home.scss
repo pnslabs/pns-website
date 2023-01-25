@@ -7,7 +7,7 @@
         left: 0;
         top: 0;
         z-index: 1;
-        background-image: url('/images/bg1.svg');
+        background-image: url('/images/bg.svg');
         background-position: center;
         background-size: cover;
         background-repeat: repeat;
@@ -94,7 +94,7 @@
         &.sub {
             max-width: 90%;
             @include row(flex-start);
-            gap: 15px;
+            gap: 20px;
             @include responsiveness(phone) {
                 max-width: 100%;
             }
@@ -168,15 +168,29 @@
         height: 50px;
         background: #86303E;
         border: 1px solid #FF4D6A;
-        gap: 7.5px;
+        gap: 10px;
         cursor: pointer;
+        transition: all 0.3s ease-in;
+    }
+
+    &__button .home__button-arrow {
+        transition: all 0.3s ease-in;
+    }
+
+    &__button:hover {
+        background: #712531;
+    }
+
+    &__button:hover .home__button-arrow {
+        transform: rotate(45deg);
+        transition: all 0.3s ease-in;
     }
 
     &__button-text {
         font-weight: 700;
         font-size: 16px;
         line-height: 24px;
-        color: #40020C;
+        color: #DFB791;
         font-family: $font-secondary;
     }
 

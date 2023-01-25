@@ -3,9 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
-import heroImage from '../public/images/hero-img.png';
-import AnimatedText from 'react-animated-text-content';
-
+import heroImage from '../public/images/rectangle.png';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import {
   ButtonArrow,
@@ -44,14 +42,17 @@ const textStates = [
   {
     text: 'Web3',
     colorClass: 'red',
+    x: 8,
   },
   {
     text: 'DeFi',
     colorClass: 'green',
+    x: 10,
   },
   {
     text: 'Payments',
     colorClass: 'yellow',
+    x: 7,
   },
 ];
 
@@ -68,14 +69,33 @@ export default function Home() {
 
   const toggleText = () => {
     setTimeout(() => {
-      if (textIndex === textStates.length - 1) {
-        setTextIndex(0);
-        setText(textStates[0]);
-      } else {
-        setTextIndex(textIndex + 1);
-        setText(textStates[textIndex + 1]);
-      }
-    }, 3000);
+      gsap.to('.home__title-sub', { duration: 0.5, opacity: 0 });
+      setTimeout(() => {
+        if (textIndex === textStates.length - 1) {
+          setTextIndex(0);
+          setText(textStates[0]);
+          gsap.to(`.home__num`, {
+            x: textStates[0].x,
+            duration: 0.6,
+          });
+          gsap.to(`.home__title-sub`, {
+            duration: 1,
+            opacity: 1,
+          });
+        } else {
+          setTextIndex(textIndex + 1);
+          setText(textStates[textIndex + 1]);
+          gsap.to(`.home__num`, {
+            x: textStates[textIndex + 1].x,
+            duration: 0.6,
+          });
+          gsap.to(`.home__title-sub`, {
+            duration: 1,
+            opacity: 1,
+          });
+        }
+      }, 500);
+    }, 2500);
   };
 
   useEffect(() => {
@@ -141,19 +161,10 @@ export default function Home() {
             <div className="home__title-wrapper">
               <h1 className="home__title first">Mobile Phone</h1>
               <h1 className="home__title sub">
-                <div className="home__num">
-                  {' '}
-                  Number <span>+</span>
-                </div>
+                <div className="home__num"> Number + </div>
 
                 <div className={`home__title-sub ${text.colorClass}`}>
-                  <AnimatedText
-                    animationType="blocks"
-                    interval={0.06}
-                    duration={0.5}
-                    type="words">
-                    {text.text}
-                  </AnimatedText>
+                  {text.text}
                 </div>
               </h1>
               <p className="home__title-desc">
@@ -164,7 +175,9 @@ export default function Home() {
             <div className="home__button-wrapper">
               <button className="home__button" onClick={handleModal}>
                 <div className="home__button-text">Join Waitlist</div>
-                <ButtonArrow />
+                <div className="home__button-arrow">
+                  <ButtonArrow />
+                </div>
               </button>
             </div>
           </div>
