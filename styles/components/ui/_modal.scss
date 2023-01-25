@@ -36,11 +36,13 @@
         border-radius: 8px;
         padding: 53px;
         z-index: 9999999999999;
+        max-height: 90vh;
+        overflow-y: auto;
         @include responsiveness(phone){
             margin: 0 20px;
             padding: 50px 23px;
             max-height: 80vh;
-            overflow-y: auto;
+            
         }
     }
 
@@ -97,7 +99,8 @@
         background-size: contain;
         background-repeat: repeat;
         @include responsiveness(phone){
-            height: 37px;
+            height: 30px;
+            background-repeat: no-repeat;
         }
     }
     &__button-wrapper {
