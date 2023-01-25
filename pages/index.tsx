@@ -231,6 +231,8 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
     setValue('googleCaptcha', value);
   };
 
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY);
+
   return (
     <div>
       <div onClick={handleModal} className="modal__icon">
