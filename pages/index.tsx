@@ -18,6 +18,7 @@ import { butonTypes } from '../components/UI/PNSButton';
 import Link from 'next/link';
 import Image from 'next/image';
 import { gsap } from 'gsap';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const links = [
   {
@@ -201,6 +202,7 @@ const schema = yup.object().shape({
   email: yup.string().email('Email is Invalid').required('Email is required'),
   firstname: yup.string().required('First name is required'),
   lastname: yup.string().required('Last name is required'),
+  googleCaptcha: yup.string().required('Please verify you are human'),
 });
 
 const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
@@ -211,6 +213,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<any>({
     mode: 'all',
     resolver: yupResolver(schema),
@@ -220,8 +223,12 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
     setBtnText('Sending...');
     setIsDisabled(true);
     const url = `https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe`;
-    await axios.post(url, values);
+    await axios.post(url, { ...values, googleCaptcha: '' });
     setBtnText("Success, you're now on the waitlist");
+  };
+
+  const onChange = (value: any) => {
+    setValue('googleCaptcha', value);
   };
   return (
     <div>
@@ -259,6 +266,11 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           register={register('email')}
           error={errors.email?.message}
           placeholder="codemathics@pns.foundation"
+        />
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY}
+          onChange={onChange}
+          onErrored={() => setValue('googleCaptcha', '')}
         />
         <div className="modal__button-wrapper">
           <PNSButton
