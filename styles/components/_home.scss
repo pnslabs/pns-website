@@ -117,9 +117,6 @@
 
     &__title-sub {
         text-align: left;
-        @include responsiveness(phone) {
-            width: 160px;
-        }
         &.red {
             color: #FF4D6A;
         }
