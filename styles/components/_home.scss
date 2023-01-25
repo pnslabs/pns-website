@@ -152,10 +152,10 @@
         @include row(center);
         @include responsiveness(phone) {
             margin-top: 40px;
+            margin-bottom: 30px;
         }
         @include responsiveness(phone-tiny) {
             margin-top: 20px;
-            margin-bottom: 30px;
         }
     }
 
