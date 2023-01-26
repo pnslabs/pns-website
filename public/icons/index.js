@@ -40,6 +40,8 @@ import Telegram from './_telegram';
 import Twitter from './_twitter';
 import TwitterBlack from './_twitter-black';
 import DiscordBlack from './_discord-black';
+import PurpleLine from './purple-line';
+import PurpleCircle from './purple-circle';
 
 export {
   LogoBlack,
@@ -84,4 +86,6 @@ export {
   Twitter,
   TwitterBlack,
   DiscordBlack,
+  PurpleLine,
+  PurpleCircle,
 };

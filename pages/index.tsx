@@ -13,6 +13,8 @@ import {
   DiscordBlack,
   Github,
   LogoWhite,
+  PurpleCircle,
+  PurpleLine,
   Telegram,
   Twitter,
   TwitterBlack,
@@ -131,6 +133,35 @@ export default function Home() {
           opacity: 0,
           y: 150,
         });
+
+      const line = gsap.timeline({ repeat: -1, repeatDelay: 0.3 });
+      line
+        .from('.yellow-circle', {
+          duration: 0.8,
+          opacity: 0,
+          delay: 0.2,
+        })
+        .to('.yellow-circle', {
+          duration: 0.4,
+          opacity: 0,
+          delay: 0.1,
+        })
+        .from('.yellow-line', {
+          duration: 0.1,
+          opacity: 0,
+        })
+        .to('.yellow-line', {
+          duration: 0.3,
+          x: -150,
+        })
+        .to('.yellow-line', {
+          duration: 0.1,
+          left: '35%',
+        })
+        .to('.yellow-line', {
+          duration: 0.1,
+          opacity: 0,
+        });
     }, div);
 
     return () => ctx.revert();
@@ -163,14 +194,22 @@ export default function Home() {
         <div className="home__wrapper">
           <div className="container">
             <div className="home__title-wrapper">
-              <h1 className="home__title first">Mobile Phone</h1>
-              <h1 className="home__title sub">
-                <div className="home__num"> Number + </div>
+              <div className="home__title-inner">
+                <h1 className="home__title first">Mobile Phone</h1>
+                <h1 className="home__title sub">
+                  <div className="home__num"> Number + </div>
 
-                <div className={`home__title-sub ${text.colorClass}`}>
-                  {text.text}
+                  <div className={`home__title-sub ${text.colorClass}`}>
+                    {text.text}
+                  </div>
+                </h1>
+                <div className="home__yellow yellow-circle">
+                  <PurpleCircle />
                 </div>
-              </h1>
+                <div className="home__yellow yellow-line">
+                  <PurpleLine />
+                </div>
+              </div>
               <p className="home__title-desc">
                 The PNS protocol is a chain agnostic smart contract that enables
                 the seamless transfer of cryptocurrency using a phone number.
@@ -188,7 +227,7 @@ export default function Home() {
           <Image
             priority={true}
             height={317}
-            width={850}
+            style={{ objectFit: 'contain', width: '100%' }}
             src={heroImage}
             alt="sample"
             className="home__img"

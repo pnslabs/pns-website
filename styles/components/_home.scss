@@ -114,6 +114,20 @@
             padding-top: 20px;
         }
     }
+    &__title-inner {
+        @include column(center);
+        width: 100%;
+        position: relative;
+    }
+
+    &__yellow {
+        position: absolute;
+        right: 70px;
+
+        &.yellow-line {
+            right: 23px;
+        }
+    }
 
     &__title {
         font-weight: 700;
@@ -193,6 +207,9 @@
 
     &__img {
         object-fit: contain;
+        @include responsiveness(desktop) {
+            height: 500px;
+        }
         @include responsiveness(tab-land) {
             width: 90%;
         }
