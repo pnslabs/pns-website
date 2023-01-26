@@ -77,7 +77,7 @@ export default function Home() {
           setText(textStates[0]);
           gsap.to(`.home__num`, {
             x: textStates[0].x,
-            duration: 0.6,
+            duration: 1,
           });
           gsap.to(`.home__title-sub`, {
             duration: 1,
@@ -88,7 +88,7 @@ export default function Home() {
           setText(textStates[textIndex + 1]);
           gsap.to(`.home__num`, {
             x: textStates[textIndex + 1].x,
-            duration: 0.6,
+            duration: 1,
           });
           gsap.to(`.home__title-sub`, {
             duration: 1,
@@ -174,12 +174,12 @@ export default function Home() {
               </p>
             </div>
             <div className="home__button-wrapper">
-              <button className="home__button" onClick={handleModal}>
-                <div className="home__button-text">Join Waitlist</div>
-                <div className="home__button-arrow">
-                  <ButtonArrow />
-                </div>
-              </button>
+              <PNSButton
+                hasIcon
+                onClick={handleModal}
+                text={'Join Waitlist'}
+                type={butonTypes.button}
+              />
             </div>
           </div>
           <Image
@@ -237,11 +237,11 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
         <CancelIcon />
       </div>
       <div className="modal__header">
-        <h2 className="modal__title">Get early access.</h2>
+        <h2 className="modal__title">Get early access 😎</h2>
       </div>
       <div className="modal__desc">
         Join our waitlist and community to be among the first to know when we
-        launch our product 🚀
+        launch our product. 🚀
       </div>
       <form onSubmit={handleSubmit(onSubmit)} className="modal__form">
         <div className="modal__input-wrapper">
@@ -268,15 +268,17 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           error={errors.email?.message}
           placeholder="codemathics@pns.foundation"
         />
-        <ReCAPTCHA
-          sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-          onChange={onChange}
-          onErrored={() => setValue('googleCaptcha', '')}
-        />
+        <div className="modal__captcha">
+          <ReCAPTCHA
+            sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+            onChange={onChange}
+            onErrored={() => setValue('googleCaptcha', '')}
+          />
+        </div>
         <div className="modal__button-wrapper">
           <PNSButton
             fullWidth
-            hasIcon={false}
+            hasIcon
             onClick={() => {}}
             text={btnText}
             disabled={isDisabled}

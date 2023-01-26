@@ -159,38 +159,6 @@
         }
     }
 
-    &__button {
-        @include row(center);
-        padding: 16px 30px;
-        height: 50px;
-        background: #86303E;
-        border: 1px solid #FF4D6A;
-        gap: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease-in;
-    }
-
-    &__button .home__button-arrow {
-        transition: all 0.3s ease-in;
-    }
-
-    &__button:hover {
-        background: #712531;
-    }
-
-    &__button:hover .home__button-arrow {
-        transform: rotate(45deg);
-        transition: all 0.3s ease-in;
-    }
-
-    &__button-text {
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
-        color: #DFB791;
-        font-family: $font-secondary;
-    }
-
     &__img {
         object-fit: contain;
         @include responsiveness(tab-land) {
