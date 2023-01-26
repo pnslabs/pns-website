@@ -13,25 +13,37 @@
     color: $color-action-text;
     border: 1px solid $color-border-gray;
   }
+  &.secondary {
+    background: #00ACEE;
+    color: $color-black;
+    border: none;
+  }
+  &.tertiary {
+    background: #7289DA;
+    color: $color-black;
+    border: none;
+  }
   &.full {
     width: 100%;
   }
   &__wrapper {
     @include row(center);
   }
-  &__text {
-    &.icon {
-      margin-right: 9.5px;
-    }
-  }
 
   &__icon {
     transition: all 0.3s ease;
+    margin-left: 9.5px;
   }
 }
 
 .button:hover {
   background: #712531;
+  &.secondary {
+    background: #068abe;
+  }
+  &.tertiary {
+    background: #4e65b8;
+  }
 }
 
 .button:hover .button__icon {

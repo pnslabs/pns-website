@@ -10,12 +10,14 @@ import {
   ButtonArrow,
   CancelIcon,
   Discord,
+  DiscordBlack,
   Github,
   LogoWhite,
   Telegram,
   Twitter,
+  TwitterBlack,
 } from '../public/icons';
-import { butonTypes } from '../components/UI/PNSButton';
+import { butonTypes, outlineTypes } from '../components/UI/PNSButton';
 import Link from 'next/link';
 import Image from 'next/image';
 import { gsap } from 'gsap';
@@ -221,9 +223,21 @@ const schema = yup.object().shape({
   googleCaptcha: yup.string().required('Please verify you are human'),
 });
 
+const share = [
+  {
+    title: 'Share on Twitter',
+    icon: <TwitterBlack />,
+  },
+  {
+    title: 'Join Community',
+    icon: <DiscordBlack />,
+  },
+];
+
 const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   const [btnText, setBtnText] = useState('Join Waitlist');
   const [isDisabled, setIsDisabled] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const {
     register,
@@ -236,11 +250,21 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   });
 
   const onSubmit = async (values: any) => {
-    setBtnText('Sending...');
-    setIsDisabled(true);
-    const url = 'https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe';
-    await axios.post(url, { ...values, googleCaptcha: '' });
-    setBtnText("Success, you're now on the waitlist");
+    try {
+      setBtnText('Sending...');
+      setIsDisabled(true);
+      const url = 'https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe';
+      const response = await axios.post(url, { ...values, googleCaptcha: '' });
+      if (response) {
+        setSuccess(true);
+      }
+    } catch (error) {
+      setBtnText('Something went wrong, try again');
+      setTimeout(() => {
+        setIsDisabled(false);
+        setBtnText('Join Waitlist');
+      }, 1000);
+    }
   };
 
   const onChange = (value: any) => {
@@ -252,57 +276,87 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
       <div onClick={handleModal} className="modal__icon">
         <CancelIcon />
       </div>
-      <div className="modal__header">
-        <h2 className="modal__title">Get early access 😎</h2>
-      </div>
-      <div className="modal__desc">
-        Join our waitlist and community to be among the first to know when we
-        launch our product. 🚀
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="modal__form">
-        <div className="modal__input-wrapper">
-          <PNSInput
-            name="firstname"
-            label="First name"
-            register={register('firstname')}
-            error={errors.firstname?.message}
-            placeholder="John"
-          />
-          <PNSInput
-            name="lastname"
-            label="Last name"
-            register={register('lastname')}
-            error={errors.lastname?.message}
-            placeholder="Doe"
-          />
+      {success ? (
+        <div className="home__success">
+          <div className="home__success-icon">🚀</div>
+          <div className="home__success-title">You are on the waitlist!</div>
+          <div className="home__success-desc">
+            You have now successfully joined the waitlist, you will be notified
+            when PNS launches. Spread the word? 👇🏽
+          </div>
+          <div className="home__success-share">
+            {share.map((item, index) => (
+              <PNSButton
+                key={index}
+                fullWidth
+                hasIcon={false}
+                onClick={() => {}}
+                text={item.title}
+                disabled={isDisabled}
+                type={butonTypes.button}
+                variant={
+                  index === 0 ? outlineTypes.secondary : outlineTypes.tertiary
+                }
+                icon={item.icon}
+              />
+            ))}
+          </div>
         </div>
-        <PNSInput
-          name="email"
-          label="Email"
-          type="email"
-          register={register('email')}
-          error={errors.email?.message}
-          placeholder="codemathics@pns.foundation"
-        />
-        <div className="modal__captcha">
-          <ReCAPTCHA
-            sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
-            onChange={onChange}
-            onErrored={() => setValue('googleCaptcha', '')}
-          />
-        </div>
-        <div className="modal__button-wrapper">
-          <PNSButton
-            fullWidth
-            hasIcon
-            onClick={() => {}}
-            text={btnText}
-            disabled={isDisabled}
-            type={butonTypes.submit}
-          />
-        </div>
-        <div className="modal__image" />
-      </form>
+      ) : (
+        <>
+          <div className="modal__header">
+            <h2 className="modal__title">Get early access 😎</h2>
+          </div>
+          <div className="modal__desc">
+            Join our waitlist and community to be among the first to know when
+            we launch our product. 🚀
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)} className="modal__form">
+            <div className="modal__input-wrapper">
+              <PNSInput
+                name="firstname"
+                label="First name"
+                register={register('firstname')}
+                error={errors.firstname?.message}
+                placeholder="John"
+              />
+              <PNSInput
+                name="lastname"
+                label="Last name"
+                register={register('lastname')}
+                error={errors.lastname?.message}
+                placeholder="Doe"
+              />
+            </div>
+            <PNSInput
+              name="email"
+              label="Email"
+              type="email"
+              register={register('email')}
+              error={errors.email?.message}
+              placeholder="codemathics@pns.foundation"
+            />
+            <div className="modal__captcha">
+              <ReCAPTCHA
+                sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+                onChange={onChange}
+                onErrored={() => setValue('googleCaptcha', '')}
+              />
+            </div>
+            <div className="modal__button-wrapper">
+              <PNSButton
+                fullWidth
+                hasIcon
+                onClick={() => {}}
+                text={btnText}
+                disabled={isDisabled}
+                type={butonTypes.submit}
+              />
+            </div>
+          </form>
+        </>
+      )}
+      <div className="modal__image" />
     </div>
   );
 };

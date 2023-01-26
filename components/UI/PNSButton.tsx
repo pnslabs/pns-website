@@ -6,9 +6,11 @@ export enum butonTypes {
   reset = 'reset',
 }
 
-enum outlineTypes {
+export enum outlineTypes {
   primary = 'primary',
   outline = 'outline',
+  secondary = 'secondary',
+  tertiary = 'tertiary',
 }
 
 interface IPNSButton {
@@ -19,6 +21,7 @@ interface IPNSButton {
   hasIcon?: boolean;
   fullWidth?: boolean;
   disabled?: boolean;
+  icon?: React.ReactNode | JSX.Element;
 }
 const PNSButton = ({
   text,
@@ -28,6 +31,7 @@ const PNSButton = ({
   hasIcon = true,
   fullWidth = false,
   disabled,
+  icon,
 }: IPNSButton) => {
   return (
     <>
@@ -37,12 +41,13 @@ const PNSButton = ({
         className={`button ${variant} ${fullWidth && 'full'}`}
         onClick={onClick}>
         <div className="button__wrapper">
-          <div className={`button__text ${hasIcon && 'icon'}`}>{text}</div>
+          <div className={`button__text`}>{text}</div>
           {hasIcon && (
             <div className="button__icon">
               <ButtonArrow />
             </div>
           )}
+          {icon && <div className="button__icon">{icon}</div>}
         </div>
       </button>
     </>

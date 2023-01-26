@@ -38,6 +38,8 @@ import Discord from './_discord';
 import Github from './_github';
 import Telegram from './_telegram';
 import Twitter from './_twitter';
+import TwitterBlack from './_twitter-black';
+import DiscordBlack from './_discord-black';
 
 export {
   LogoBlack,
@@ -80,4 +82,6 @@ export {
   Github,
   Telegram,
   Twitter,
+  TwitterBlack,
+  DiscordBlack,
 };
