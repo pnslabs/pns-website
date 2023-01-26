@@ -42,6 +42,12 @@ import TwitterBlack from './_twitter-black';
 import DiscordBlack from './_discord-black';
 import PurpleLine from './purple-line';
 import PurpleCircle from './purple-circle';
+import YellowLine from './yellow-line';
+import YellowCircle from './yellow-circle';
+import GreenCircle from './green-circle';
+import GreenLine from './green-line';
+import RedCircle from './red-circle';
+import RedLine from './red-line';
 
 export {
   LogoBlack,
@@ -88,4 +94,10 @@ export {
   DiscordBlack,
   PurpleLine,
   PurpleCircle,
+  YellowLine,
+  YellowCircle,
+  GreenCircle,
+  GreenLine,
+  RedCircle,
+  RedLine,
 };

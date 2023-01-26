@@ -12,12 +12,18 @@ import {
   Discord,
   DiscordBlack,
   Github,
+  GreenCircle,
+  GreenLine,
   LogoWhite,
   PurpleCircle,
   PurpleLine,
+  RedCircle,
+  RedLine,
   Telegram,
   Twitter,
   TwitterBlack,
+  YellowCircle,
+  YellowLine,
 } from '../public/icons';
 import { butonTypes, outlineTypes } from '../components/UI/PNSButton';
 import Link from 'next/link';
@@ -134,10 +140,10 @@ export default function Home() {
           y: 150,
         });
 
-      const line = gsap.timeline({ repeat: -1, repeatDelay: 0.3 });
-      line
+      const yellowLine = gsap.timeline({ repeat: -1, repeatDelay: 0.3 });
+      yellowLine
         .from('.yellow-circle', {
-          duration: 0.8,
+          duration: 0.5,
           opacity: 0,
           delay: 0.2,
         })
@@ -152,13 +158,88 @@ export default function Home() {
         })
         .to('.yellow-line', {
           duration: 0.3,
-          x: -150,
+          left: '50%',
         })
         .to('.yellow-line', {
           duration: 0.1,
-          left: '35%',
+          left: '20%',
         })
         .to('.yellow-line', {
+          duration: 0.1,
+          opacity: 0,
+        });
+
+      const purpleLine = gsap.timeline({ repeat: -1, repeatDelay: 0.3 });
+      purpleLine
+        .from('.purple-circle', {
+          duration: 0.5,
+          opacity: 0,
+          delay: 0.2,
+        })
+        .to('.purple-circle', {
+          duration: 0.4,
+          opacity: 0,
+          delay: 0.1,
+        })
+        .from('.purple-line', {
+          duration: 0.1,
+          opacity: 0,
+        })
+        .to('.purple-line', {
+          duration: 0.1,
+          left: '40%',
+        })
+        .to('.purple-line', {
+          duration: 0.1,
+          opacity: 0,
+        });
+
+      const greenLine = gsap.timeline({ repeat: -1, repeatDelay: 0.3 });
+      greenLine
+        .from('.green-circle', {
+          duration: 0.5,
+          opacity: 0,
+          delay: 1,
+        })
+        .to('.green-circle', {
+          duration: 0.4,
+          opacity: 0,
+          delay: 0.1,
+        })
+        .from('.green-line', {
+          duration: 0.1,
+          opacity: 0,
+        })
+        .to('.green-line', {
+          duration: 0.1,
+          y: 300,
+        })
+        .to('.green-line', {
+          duration: 0.1,
+          opacity: 0,
+        });
+
+      const redLine = gsap.timeline({ repeat: -1, repeatDelay: 0.3 });
+      redLine
+        .from('.red-circle', {
+          duration: 0.5,
+          opacity: 0,
+          delay: 0.2,
+        })
+        .to('.red-circle', {
+          duration: 0.4,
+          opacity: 0,
+          delay: 0.1,
+        })
+        .from('.red-line', {
+          duration: 0.1,
+          opacity: 0,
+        })
+        .to('.red-line', {
+          duration: 0.3,
+          y: 200,
+        })
+        .to('.red-line', {
           duration: 0.1,
           opacity: 0,
         });
@@ -192,7 +273,7 @@ export default function Home() {
           </div>
         </nav>
         <div className="home__wrapper">
-          <div className="container">
+          <div className="home__inner-wrapper container">
             <div className="home__title-wrapper">
               <div className="home__title-inner">
                 <h1 className="home__title first">Mobile Phone</h1>
@@ -204,10 +285,10 @@ export default function Home() {
                   </div>
                 </h1>
                 <div className="home__yellow yellow-circle">
-                  <PurpleCircle />
+                  <YellowCircle />
                 </div>
                 <div className="home__yellow yellow-line">
-                  <PurpleLine />
+                  <YellowLine />
                 </div>
               </div>
               <p className="home__title-desc">
@@ -223,15 +304,29 @@ export default function Home() {
                 type={butonTypes.button}
               />
             </div>
+            <div className="home__green green-circle">
+              <GreenCircle />
+            </div>
+            <div className="home__green green-line">
+              <GreenLine />
+            </div>
           </div>
-          <Image
-            priority={true}
-            height={317}
-            style={{ objectFit: 'contain', width: '100%' }}
-            src={heroImage}
-            alt="sample"
-            className="home__img"
-          />
+          <div className="home__img-wrapper">
+            <Image
+              priority={true}
+              height={317}
+              style={{ objectFit: 'contain', width: '100%' }}
+              src={heroImage}
+              alt="sample"
+              className="home__img"
+            />
+            <div className="home__purple purple-circle">
+              <PurpleCircle />
+            </div>
+            <div className="home__purple purple-line">
+              <PurpleLine />
+            </div>
+          </div>
           <Image
             priority={true}
             style={{ objectFit: 'contain', width: '100%' }}
@@ -247,6 +342,12 @@ export default function Home() {
               </Link>
             ))}
           </div>
+          <div className="home__red red-circle">
+            <RedCircle />
+          </div>
+          <div className="home__red red-line">
+            <RedLine />
+          </div>
         </div>
       </div>
       <div className="home__bg-image" />
@@ -259,7 +360,7 @@ const schema = yup.object().shape({
   email: yup.string().email('Email is Invalid').required('Email is required'),
   firstname: yup.string().required('First name is required'),
   lastname: yup.string().required('Last name is required'),
-  googleCaptcha: yup.string().required('Please verify you are human'),
+  captcha: yup.string().required('Please verify you are human'),
 });
 
 const share = [
@@ -293,7 +394,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
       setBtnText('Sending...');
       setIsDisabled(true);
       const url = 'https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe';
-      const response = await axios.post(url, { ...values, googleCaptcha: '' });
+      const response = await axios.post(url, values);
       if (response) {
         setSuccess(true);
       }
@@ -307,7 +408,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   };
 
   const onChange = (value: any) => {
-    setValue('googleCaptcha', value);
+    setValue('captcha', value);
   };
 
   return (
@@ -379,7 +480,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
               <ReCAPTCHA
                 sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
                 onChange={onChange}
-                onErrored={() => setValue('googleCaptcha', '')}
+                onErrored={() => setValue('captcha', '')}
               />
             </div>
             <div className="modal__button-wrapper">

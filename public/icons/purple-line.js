@@ -6,10 +6,10 @@ const PurpleLine = () => {
       viewBox="0 0 100 2"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">
-      <path d="M100 1L2.26498e-06 1" stroke="url(#paint0_linear_1835_5234)" />
+      <path d="M100 1L2.26498e-06 1" stroke="url(#paint0_linear_1835_5232)" />
       <defs>
         <linearGradient
-          id="paint0_linear_1835_5234"
+          id="paint0_linear_1835_5232"
           x1="100"
           y1="1.5"
           x2="0"
