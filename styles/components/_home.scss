@@ -2,6 +2,16 @@
     height: 100vh;
     background: $color-home-bg;
 
+    @include responsiveness(phone) {
+        min-height: 100vh;
+        height: fit-content;
+        padding-bottom: 30px;
+    }
+
+    @include responsiveness(phone-tiny) {
+        padding-bottom: 150px;
+    }
+
     &__bg-image {
         position: absolute;
         left: 0;
@@ -36,6 +46,7 @@
         padding-top: 51.5px;
         @include responsiveness(phone) {
             padding-top: 30px;
+            @include row(center);
         }
     }
 
@@ -47,6 +58,10 @@
     &__logo-title {
         color: $color-white;
         font-weight: 400;
+
+        @include responsiveness(phone) {
+            display: none;
+        }
     }
 
     &__wrapper {
@@ -54,6 +69,10 @@
         z-index: 3;
         height: 90vh;
         @include column(space-between);
+
+        @include responsiveness(phone) {
+            @include column(flex-start);
+        }
     }
 
     &__nav-links {
@@ -61,6 +80,15 @@
         gap: 12px;
         @include responsiveness(phone){
             display: none;
+        }
+    }
+
+    &__nav-links-mobile {
+        display: none;
+        @include responsiveness(phone){
+            display: flex;
+            @include row(center);
+            gap: 12px;
         }
     }
 
@@ -77,6 +105,9 @@
         @include column(center);
         @include responsiveness(tab-land) {
             padding-top: 100px;
+        }
+        @include responsiveness(phone) {
+            padding-top: 60px;
         }
         @include responsiveness(phone-tiny) {
             padding-top: 20px;
@@ -151,7 +182,7 @@
         margin-top: 38px;
         @include row(center);
         @include responsiveness(phone) {
-            margin-top: 40px;
+            margin-top: 30px;
             margin-bottom: 30px;
         }
         @include responsiveness(phone-tiny) {
@@ -165,11 +196,36 @@
             width: 90%;
         }
         @include responsiveness(phone) {
-            width: 90%;
-            object-fit: fill;
+            display: none;
+        }
+    }
+
+    &__img-mobile {
+        display: none;
+        @include responsiveness(phone) {
+            margin-top: 20px;
+            display: block;
         }
     }
     &__num {
         transition: width 0.3s ease-in-out;
+    }
+    &__community {
+        display: none;
+        display: block;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        text-align: center;
+        color: #ACACAC;
+        margin-top: 42px;
+        margin-bottom: 26px;
+    }
+}
+
+.mobile {
+    display: none;
+    @include responsiveness(phone) {
+        display: block;
     }
 }

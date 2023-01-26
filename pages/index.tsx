@@ -4,6 +4,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
 import heroImage from '../public/images/rectangle.png';
+import heroImageMobile from '../public/images/rectangle2.png';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import {
   ButtonArrow,
@@ -123,7 +124,7 @@ export default function Home() {
         })
         .from('.home__title-desc', { duration: 0.4, opacity: 0, y: 45 })
         .from('.home__button-wrapper', { duration: 0.3, opacity: 0, y: 45 })
-        .from('.home__img', {
+        .from('.home__img, .home__img-mobile', {
           duration: 0.3,
           opacity: 0,
           y: 150,
@@ -157,8 +158,8 @@ export default function Home() {
             ))}
           </div>
         </nav>
-        <div className="home__wrapper container">
-          <div>
+        <div className="home__wrapper">
+          <div className="container">
             <div className="home__title-wrapper">
               <h1 className="home__title first">Mobile Phone</h1>
               <h1 className="home__title sub">
@@ -190,6 +191,21 @@ export default function Home() {
             alt="sample"
             className="home__img"
           />
+          <Image
+            priority={true}
+            style={{ objectFit: 'contain', width: '100%' }}
+            src={heroImageMobile}
+            alt="sample"
+            className="home__img-mobile"
+          />
+          <div className="home__community mobile">Join our communities.</div>
+          <div className="home__nav-links-mobile">
+            {links.map((item, index) => (
+              <Link key={index} href={item.link}>
+                <div className="home__nav-link">{item.icon}</div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
       <div className="home__bg-image" />
