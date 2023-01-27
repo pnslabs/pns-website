@@ -8,6 +8,11 @@
   padding: 16px 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+  @include responsiveness(desktop) {
+    font-size: 27px;
+    height: 90px;
+    padding: 20px 70px;
+  }
   &.outline {
     background: $color-white;
     color: $color-action-text;

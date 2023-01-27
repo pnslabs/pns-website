@@ -45,6 +45,9 @@
         position: relative;
         z-index: 3;
         padding-top: 51.5px;
+        @include responsiveness(desktop){
+            padding-top: 150px;
+        }
         @include responsiveness(phone) {
             padding-top: 30px;
             @include row(center);
@@ -104,6 +107,9 @@
     &__title-wrapper {
         padding-top: 37px;
         @include column(center);
+        @include responsiveness(desktop) {
+            padding-top: 200px;
+        }
         @include responsiveness(tab-land) {
             padding-top: 100px;
         }
@@ -124,6 +130,10 @@
         position: absolute;
         right: 70px;
 
+        @include responsiveness(desktop) {
+            right: 0;
+        }
+
         @include responsiveness(phone) {
             right: 10px;
             display: none;
@@ -142,6 +152,10 @@
         position: absolute;
         left: 250px;
         top: 69px;
+        @include responsiveness(desktop) {
+            left: 25%;
+            top: 32%;
+        }
         @include responsiveness(tab-land){
             left: 100px;
         }
@@ -164,6 +178,11 @@
         top: 80px;
         left: 400px;
 
+        @include responsiveness(desktop) {
+            left: 28.3%;
+            top: 200px;
+        }
+
         @include responsiveness(tab-land){
             left: 180px;
         }
@@ -184,6 +203,9 @@
         position: absolute;
         top: 50%;
         right: 300px;
+        @include responsiveness(desktop) {
+            right: 25%;
+        }
         @include responsiveness(tab-land){
             right: 100px;
         }
@@ -221,6 +243,11 @@
             @include responsiveness(phone) {
                 max-width: 100%;
             }
+        }
+        @include responsiveness(desktop) {
+            font-size: 115px;
+            line-height: 120.5%;
+            max-width: 80%;
         }
         @include responsiveness(tab-land) {
             max-width: 80%;
@@ -261,6 +288,12 @@
         max-width: 53%;
         text-align: center;
         font-family: $font-secondary;
+        @include responsiveness(desktop) {
+            margin-top: 30px;
+            font-size: 30px;
+            line-height: 47px;
+            max-width: 55%;
+        }
         @include responsiveness(tab-land) {
             max-width: 80%;
         }
@@ -273,6 +306,9 @@
     &__button-wrapper {
         margin-top: 38px;
         @include row(center);
+        @include responsiveness(desktop) {
+            margin-top: 58px;
+        }
         @include responsiveness(phone) {
             margin-top: 30px;
             margin-bottom: 30px;
@@ -285,7 +321,7 @@
     &__img {
         object-fit: contain;
         @include responsiveness(desktop) {
-            height: 500px;
+            height: 750px;
         }
         @include responsiveness(tab-land) {
             width: 90%;
