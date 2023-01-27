@@ -1,19 +1,18 @@
-import {
-  MutableRefObject,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Image from 'next/image';
+import { gsap } from 'gsap';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { TwitterShareButton } from 'react-share';
+
 import heroImage from '../public/images/rectangle.png';
 import heroImageMobile from '../public/images/rectangle2.png';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
+import { butonTypes, outlineTypes } from '../components/UI/PNSButton';
 import {
-  ButtonArrow,
   CancelIcon,
   Discord,
   DiscordBlack,
@@ -31,12 +30,6 @@ import {
   YellowCircle,
   YellowLine,
 } from '../public/icons';
-import { butonTypes, outlineTypes } from '../components/UI/PNSButton';
-import Link from 'next/link';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { TwitterShareButton } from 'react-share';
 
 const links = [
   {
@@ -390,7 +383,7 @@ const share = [
 ];
 
 const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
-  const twitterShareRef: MutableRefObject = useRef(null);
+  const twitterShareRef: any = useRef(null);
 
   const [btnText, setBtnText] = useState('Join Waitlist');
   const [isDisabled, setIsDisabled] = useState(false);
