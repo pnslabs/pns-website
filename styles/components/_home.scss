@@ -20,8 +20,8 @@
         z-index: 1;
         background-image: url('/images/bg1.svg');
         background-position: center;
-        background-size: cover;
-        background-repeat: repeat;
+        background-size: contain;
+        background-repeat: no-repeat;
         height: 100%;
         width: 100%;
         opacity: 0.5;
