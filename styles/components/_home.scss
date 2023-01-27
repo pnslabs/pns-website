@@ -321,7 +321,7 @@
     &__img {
         object-fit: contain;
         @include responsiveness(desktop) {
-            height: 750px;
+            height: 650px;
         }
         @include responsiveness(tab-land) {
             width: 90%;

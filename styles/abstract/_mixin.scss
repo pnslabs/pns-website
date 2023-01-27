@@ -66,6 +66,11 @@
       @content;
     } //1200px
   }
+  @if $breakpoint == desktop-xl {
+    @media (min-width: $bp-xxl) {
+      @content;
+    } //1200px
+  }
 }
 
 @mixin animate($animation,$duration,$method,$times){
