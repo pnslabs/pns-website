@@ -1,5 +1,5 @@
 .modal {
-
+    font-family: $font-secondary;
     &__desktop {
         @include responsiveness(phone){
         }
@@ -59,7 +59,6 @@
         font-weight: 700;
         font-size: 50px;
         line-height: 100%;
-        font-family: $font-secondary;
         color: #D5D5D5;
         @include responsiveness(phone){
             font-size: 25px;
