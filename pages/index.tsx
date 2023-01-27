@@ -1,4 +1,10 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  MutableRefObject,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -30,6 +36,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { TwitterShareButton } from 'react-share';
 
 const links = [
   {
@@ -375,6 +382,8 @@ const share = [
 ];
 
 const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
+  const twitterShareRef: MutableRefObject = useRef(null);
+
   const [btnText, setBtnText] = useState('Join Waitlist');
   const [isDisabled, setIsDisabled] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -398,12 +407,15 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
       if (response) {
         setSuccess(true);
       }
-    } catch (error) {
-      setBtnText('Something went wrong, try again');
+    } catch (error: any) {
+      console.log(error?.response?.data?.message);
+      setBtnText(
+        error?.response?.data?.message || 'Something went wrong, try again'
+      );
       setTimeout(() => {
         setIsDisabled(false);
         setBtnText('Join Waitlist');
-      }, 1000);
+      }, 4000);
     }
   };
 
@@ -426,19 +438,25 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           </div>
           <div className="home__success-share">
             {share.map((item, index) => (
-              <PNSButton
+              <a
                 key={index}
-                fullWidth
-                hasIcon={false}
-                onClick={() => {}}
-                text={item.title}
-                disabled={isDisabled}
-                type={butonTypes.button}
-                variant={
-                  index === 0 ? outlineTypes.secondary : outlineTypes.tertiary
-                }
-                icon={item.icon}
-              />
+                target="_blank"
+                href={index === 0 ? '#' : 'https://discord.com'}
+                rel="noopener noreferrer">
+                <PNSButton
+                  fullWidth
+                  hasIcon={false}
+                  onClick={() =>
+                    index === 0 && twitterShareRef?.current?.click()
+                  }
+                  text={item.title}
+                  type={butonTypes.button}
+                  variant={
+                    index === 0 ? outlineTypes.secondary : outlineTypes.tertiary
+                  }
+                  icon={item.icon}
+                />
+              </a>
             ))}
           </div>
         </div>
@@ -497,6 +515,14 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
         </>
       )}
       <div className="modal__image" />
+      <TwitterShareButton
+        url="https://pns.foundation"
+        hashtags={['PNS']}
+        related={['@pnsfoundation']}>
+        <div ref={twitterShareRef} className="home__share">
+          SHARE
+        </div>
+      </TwitterShareButton>
     </div>
   );
 };

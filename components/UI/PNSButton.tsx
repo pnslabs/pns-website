@@ -42,12 +42,16 @@ const PNSButton = ({
         onClick={onClick}>
         <div className="button__wrapper">
           <div className={`button__text`}>{text}</div>
-          {hasIcon && (
-            <div className="button__icon">
-              <ButtonArrow />
-            </div>
+          {!disabled && (
+            <>
+              {hasIcon && (
+                <div className="button__icon">
+                  <ButtonArrow />
+                </div>
+              )}
+              {icon && <div className="button__icon">{icon}</div>}
+            </>
           )}
-          {icon && <div className="button__icon">{icon}</div>}
         </div>
       </button>
     </>

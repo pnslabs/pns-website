@@ -357,6 +357,10 @@
             @include column(center);
         }
     }
+
+    &__share {
+        display: none;
+    }
 }
 
 .mobile {
