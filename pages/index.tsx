@@ -40,19 +40,19 @@ import { TwitterShareButton } from 'react-share';
 
 const links = [
   {
-    link: 'https://www.pns.network/',
+    link: 'https://discord.gg/ddJuKG3K',
     icon: <Discord />,
   },
   {
-    link: 'https://www.pns.network/',
+    link: 'https://twitter.com/pnsdao',
     icon: <Twitter />,
   },
   {
-    link: 'https://www.pns.network/',
+    link: 'https://github.com/pnsfoundation',
     icon: <Github />,
   },
   {
-    link: 'https://www.pns.network/',
+    link: 'https://github.com/pnsfoundation',
     icon: <Telegram />,
   },
 ];
@@ -273,9 +273,13 @@ export default function Home() {
           </div>
           <div className="home__nav-links">
             {links.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <a
+                key={index}
+                target="_blank"
+                href={item.link}
+                rel="noopener noreferrer">
                 <div className="home__nav-link">{item.icon}</div>
-              </Link>
+              </a>
             ))}
           </div>
         </nav>
@@ -344,9 +348,13 @@ export default function Home() {
           <div className="home__community mobile">Join our communities.</div>
           <div className="home__nav-links-mobile">
             {links.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <a
+                key={index}
+                target="_blank"
+                href={item.link}
+                rel="noopener noreferrer">
                 <div className="home__nav-link">{item.icon}</div>
-              </Link>
+              </a>
             ))}
           </div>
           <div className="home__red red-circle">
@@ -441,7 +449,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
               <a
                 key={index}
                 target="_blank"
-                href={index === 0 ? '#' : 'https://discord.com'}
+                href={index === 0 ? '#' : 'https://discord.gg/ddJuKG3K'}
                 rel="noopener noreferrer">
                 <PNSButton
                   fullWidth
@@ -518,7 +526,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
       <TwitterShareButton
         url="https://pns.foundation"
         hashtags={['PNS']}
-        related={['@pnsfoundation']}>
+        related={['pnsdao']}>
         <div ref={twitterShareRef} className="home__share">
           SHARE
         </div>
