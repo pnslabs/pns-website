@@ -437,9 +437,11 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
 
   return (
     <div className="home__success">
-      <div className="home__success-screen">
-        <Lottie options={defaultOptions} />
-      </div>
+      {success && (
+        <div className="home__success-screen">
+          <Lottie options={defaultOptions} />
+        </div>
+      )}
       <div onClick={handleModal} className="modal__icon">
         <CancelIcon />
       </div>
