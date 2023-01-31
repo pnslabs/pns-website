@@ -354,7 +354,21 @@
     }
 
     &__success {
+        position: relative;
+    }
+
+    &__success-wrapper {
+        position: relative;
         @include column(center);
+        z-index: 2;
+    }
+    &__success-screen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
     }
     &__success-icon {
         font-weight: 700;

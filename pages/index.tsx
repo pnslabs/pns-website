@@ -30,6 +30,8 @@ import {
   YellowCircle,
   YellowLine,
 } from '../public/icons';
+import Lottie from 'react-lottie';
+import animationData from '../lottie/pns-welcome.json';
 
 const links = [
   {
@@ -37,7 +39,7 @@ const links = [
     icon: <Discord />,
   },
   {
-    link: 'https://twitter.com/pnsdao',
+    link: 'https://twitter.com/pnsxyz',
     icon: <Twitter />,
   },
   {
@@ -424,41 +426,57 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
     setValue('captcha', value);
   };
 
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
-    <div>
+    <div className="home__success">
+      <div className="home__success-screen">
+        <Lottie options={defaultOptions} />
+      </div>
       <div onClick={handleModal} className="modal__icon">
         <CancelIcon />
       </div>
       {success ? (
-        <div className="home__success">
-          <div className="home__success-icon">🚀</div>
-          <div className="home__success-title">You are on the waitlist!</div>
-          <div className="home__success-desc">
-            You have now successfully joined the waitlist, you will be notified
-            when PNS launches. Spread the word? 👇🏽
-          </div>
-          <div className="home__success-share">
-            {share.map((item, index) => (
-              <a
-                key={index}
-                target="_blank"
-                href={index === 0 ? '#' : 'https://discord.gg/ddJuKG3K'}
-                rel="noopener noreferrer">
-                <PNSButton
-                  fullWidth
-                  hasIcon={false}
-                  onClick={() =>
-                    index === 0 && twitterShareRef?.current?.click()
-                  }
-                  text={item.title}
-                  type={butonTypes.button}
-                  variant={
-                    index === 0 ? outlineTypes.secondary : outlineTypes.tertiary
-                  }
-                  icon={item.icon}
-                />
-              </a>
-            ))}
+        <div>
+          <div className="home__success-wrapper">
+            <div className="home__success-icon">🚀</div>
+            <div className="home__success-title">You are on the waitlist!</div>
+            <div className="home__success-desc">
+              You have now successfully joined the waitlist, you will be
+              notified when PNS launches. Spread the word? 👇🏽
+            </div>
+            <div className="home__success-share">
+              {share.map((item, index) => (
+                <a
+                  key={index}
+                  target="_blank"
+                  href={index === 0 ? '#' : 'https://discord.gg/ddJuKG3K'}
+                  rel="noopener noreferrer">
+                  <PNSButton
+                    fullWidth
+                    hasIcon={false}
+                    onClick={() =>
+                      index === 0 && twitterShareRef?.current?.click()
+                    }
+                    text={item.title}
+                    type={butonTypes.button}
+                    variant={
+                      index === 0
+                        ? outlineTypes.secondary
+                        : outlineTypes.tertiary
+                    }
+                    icon={item.icon}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       ) : (
@@ -517,9 +535,9 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
       )}
       <div className="modal__image" />
       <TwitterShareButton
-        url="https://pns.foundation"
+        url="https://pns.xyz"
         hashtags={['PNS']}
-        related={['pnsdao']}>
+        related={['pnsxyz']}>
         <div ref={twitterShareRef} className="home__share">
           SHARE
         </div>
