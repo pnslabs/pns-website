@@ -403,7 +403,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
     try {
       setBtnText('Sending...');
       setIsDisabled(true);
-      const url = 'https://pns-backend.herokuapp.com/api/v1/waitlist/subscribe';
+      const url = process.env.NEXT_PUBLIC_SERVER_URL!;
       const response = await axios.post(url, values);
       if (response) {
         setSuccess(true);
@@ -497,7 +497,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
             />
             <div className="modal__captcha">
               <ReCAPTCHA
-                sitekey={'6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI'}
+                sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}
                 onChange={onChange}
                 onErrored={() => setValue('captcha', '')}
               />
