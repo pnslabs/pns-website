@@ -322,6 +322,7 @@ export default function Home() {
             </div>
             <div className="home__button-wrapper">
               <PNSButton
+                fullWidth={false}
                 hasIcon
                 onClick={handleModal}
                 text={'Join Waitlist'}
@@ -560,7 +561,9 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           </form>
         </div>
       )}
-      <div className="modal__image" />
+      <div className="modal__image-wrapper">
+        <div className="modal__image" />
+      </div>
       <TwitterShareButton
         url="https://pns.xyz"
         hashtags={['PNS']}

@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 export default function Document() {
   return (
@@ -25,6 +26,21 @@ export default function Document() {
         {/** Twitter share */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:image" content="/socials/Header.jpg" />
+
+        {/** Google Analytics */}
+        {/* <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BDXNDSJLDQ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-BDXNDSJLDQ');
+        `}
+        </Script> */}
       </Head>
       <body>
         <Main />

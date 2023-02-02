@@ -70,7 +70,7 @@ const PNSModal = React.forwardRef(
         maxWidth: '80vw',
       },
       normal: {
-        maxWidth: '730px',
+        maxWidth: '600px',
       },
       mobile: {
         maxWidth: '100%',
