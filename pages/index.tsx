@@ -264,14 +264,17 @@ export default function Home() {
 
   return (
     <>
-      <GoogleReCaptchaProvider
-        reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}>
-        <PNSModal
-          onClose={handleModal}
-          isOpen={isModalOpen}
-          children={<ModalBody handleModal={handleModal} />}
-        />
-      </GoogleReCaptchaProvider>
+      <PNSModal
+        onClose={handleModal}
+        isOpen={isModalOpen}
+        children={
+          <GoogleReCaptchaProvider
+            reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}>
+            <ModalBody handleModal={handleModal} />
+          </GoogleReCaptchaProvider>
+        }
+      />
+
       <div ref={div} className="home">
         <nav className="home__nav container">
           <div className="home__logo">
@@ -463,7 +466,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   };
 
   return (
-    <div className="home__success">
+    <div id="modal-body" className="home__success">
       {success && (
         <div className="home__success-screen">
           <Lottie options={defaultOptions} />

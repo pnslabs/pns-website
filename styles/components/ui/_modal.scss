@@ -101,6 +101,7 @@
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
+        margin-bottom: 40px;
         @include responsiveness(phone){
             height: 30px;
             background-repeat: no-repeat;
