@@ -4,13 +4,7 @@
     font-family: $font-secondary;
 
     @include responsiveness(phone) {
-        min-height: 100vh;
-        height: fit-content;
-        padding-bottom: 30px;
-    }
-
-    @include responsiveness(phone-tiny) {
-        padding-bottom: 150px;
+        height: 110vh;
     }
 
     &__bg-image {
