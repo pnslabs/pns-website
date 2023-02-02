@@ -4,7 +4,7 @@
     font-family: $font-secondary;
 
     @include responsiveness(phone) {
-        height: 110vh;
+        height: 130vh;
     }
 
     &__bg-image {
