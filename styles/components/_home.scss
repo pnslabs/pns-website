@@ -411,6 +411,18 @@
     &__share {
         display: none;
     }
+
+    &__icon {
+       position: relative;
+       padding-top: 40px;
+       padding-right: 40px;
+       z-index: 2;
+       cursor: pointer;
+       @include row(flex-end);
+       @include responsiveness(phone){
+        padding: 50px 23px;
+        }
+    }
 }
 
 .mobile {

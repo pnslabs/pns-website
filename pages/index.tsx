@@ -1,14 +1,25 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import axios from 'axios';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Image from 'next/image';
 import { gsap } from 'gsap';
-import ReCAPTCHA from 'react-google-recaptcha';
+import {
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha,
+  GoogleReCaptcha,
+} from 'react-google-recaptcha-v3';
 import { TwitterShareButton } from 'react-share';
 
 import heroImage from '../public/images/rectangle.png';
+import recaptchaImage from '../public/images/RecaptchaLogo.png';
 import heroImageMobile from '../public/images/rectangle2.png';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import { butonTypes, outlineTypes } from '../components/UI/PNSButton';
@@ -22,6 +33,7 @@ import {
   LogoWhite,
   PurpleCircle,
   PurpleLine,
+  RecaptchaIcon,
   RedCircle,
   RedLine,
   Telegram,
@@ -252,11 +264,14 @@ export default function Home() {
 
   return (
     <>
-      <PNSModal
-        onClose={handleModal}
-        isOpen={isModalOpen}
-        children={<ModalBody handleModal={handleModal} />}
-      />
+      <GoogleReCaptchaProvider
+        reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}>
+        <PNSModal
+          onClose={handleModal}
+          isOpen={isModalOpen}
+          children={<ModalBody handleModal={handleModal} />}
+        />
+      </GoogleReCaptchaProvider>
       <div ref={div} className="home">
         <nav className="home__nav container">
           <div className="home__logo">
@@ -298,8 +313,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="home__title-desc">
-                The PNS protocol is a chain agnostic smart contract that enables
-                the seamless transfer of cryptocurrency using a phone number.
+                Phone Number Service (PNS) is a protocol designed to connect a
+                phone number to wallet addresses on the Ethereum Blockchain
               </p>
             </div>
             <div className="home__button-wrapper">
@@ -370,7 +385,7 @@ const schema = yup.object().shape({
   email: yup.string().email('Email is Invalid').required('Email is required'),
   firstname: yup.string().required('First name is required'),
   lastname: yup.string().required('Last name is required'),
-  captcha: yup.string().required('Please verify you are human'),
+  captcha: yup.string(),
 });
 
 const share = [
@@ -386,6 +401,7 @@ const share = [
 
 const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
   const twitterShareRef: any = useRef(null);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [btnText, setBtnText] = useState('Join Waitlist');
   const [isDisabled, setIsDisabled] = useState(false);
@@ -396,19 +412,34 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
     handleSubmit,
     formState: { errors },
     setValue,
+    watch,
   } = useForm<any>({
     mode: 'all',
     resolver: yupResolver(schema),
   });
 
+  const handleReCaptcha = useCallback(async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available');
+      return;
+    }
+
+    const token = await executeRecaptcha('homepage');
+    setValue('captcha', token);
+    return token;
+  }, [executeRecaptcha]);
+
   const onSubmit = async (values: any) => {
     try {
-      setBtnText('Sending...');
-      setIsDisabled(true);
-      const url = process.env.NEXT_PUBLIC_SERVER_URL!;
-      const response = await axios.post(url, values);
-      if (response) {
-        setSuccess(true);
+      const token = await handleReCaptcha();
+      if (token) {
+        setBtnText('Sending...');
+        setIsDisabled(true);
+        const url = process.env.NEXT_PUBLIC_SERVER_URL!;
+        const response = await axios.post(url, { ...values, captcha: token });
+        if (response) {
+          setSuccess(true);
+        }
       }
     } catch (error: any) {
       console.log(error?.response?.data?.message);
@@ -420,10 +451,6 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
         setBtnText('Join Waitlist');
       }, 4000);
     }
-  };
-
-  const onChange = (value: any) => {
-    setValue('captcha', value);
   };
 
   const defaultOptions = {
@@ -442,7 +469,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           <Lottie options={defaultOptions} />
         </div>
       )}
-      <div onClick={handleModal} className="modal__icon">
+      <div onClick={handleModal} className="home__icon">
         <CancelIcon />
       </div>
       {success ? (
@@ -482,7 +509,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
           </div>
         </div>
       ) : (
-        <>
+        <div className="modal__wrapper">
           <div className="modal__header">
             <h2 className="modal__title">Get early access 😎</h2>
           </div>
@@ -490,6 +517,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
             Join our waitlist and community to be among the first to know when
             we launch our product. 🚀
           </div>
+
           <form onSubmit={handleSubmit(onSubmit)} className="modal__form">
             <div className="modal__input-wrapper">
               <PNSInput
@@ -515,13 +543,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
               error={errors.email?.message}
               placeholder="codemathics@pns.foundation"
             />
-            <div className="modal__captcha">
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_GOOGLE_SITE_KEY!}
-                onChange={onChange}
-                onErrored={() => setValue('captcha', '')}
-              />
-            </div>
+
             <div className="modal__button-wrapper">
               <PNSButton
                 fullWidth
@@ -533,7 +555,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
               />
             </div>
           </form>
-        </>
+        </div>
       )}
       <div className="modal__image" />
       <TwitterShareButton

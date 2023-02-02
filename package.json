@@ -26,7 +26,7 @@
     "react": "18.2.0",
     "react-animate-height": "^3.0.5",
     "react-dom": "18.2.0",
-    "react-google-recaptcha": "^2.1.0",
+    "react-google-recaptcha-v3": "^1.10.1",
     "react-hook-form": "^7.39.6",
     "react-lottie": "^1.2.3",
     "react-scroll": "^1.8.8",

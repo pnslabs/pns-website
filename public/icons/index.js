@@ -48,6 +48,7 @@ import GreenCircle from './green-circle';
 import GreenLine from './green-line';
 import RedCircle from './red-circle';
 import RedLine from './red-line';
+import RecaptchaIcon from './RecaptchaLogo';
 
 export {
   LogoBlack,
@@ -100,4 +101,5 @@ export {
   GreenLine,
   RedCircle,
   RedLine,
+  RecaptchaIcon,
 };
