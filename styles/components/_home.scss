@@ -99,6 +99,11 @@
         background: rgba(255, 77, 106, 0.1);
     }
 
+    &__nav-link:hover .home__social-icon {
+        fill: #DFB791;
+        transition: fill 0.3s ease;
+    }
+
     &__title-wrapper {
         padding-top: 37px;
         @include column(center);
@@ -146,7 +151,7 @@
     &__purple {
         position: absolute;
         left: 250px;
-        top: 69px;
+        top: 20px;
         @include responsiveness(desktop) {
             left: 25%;
             top: 32%;
