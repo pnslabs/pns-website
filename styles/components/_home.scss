@@ -21,6 +21,20 @@
         opacity: 0.4;
     }
 
+    &__bg-noise {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-image: url('/images/noise.svg');
+        background-position: center;
+        background-size: contain;
+        background-repeat: repeat;
+        background-color: #17161C;
+        height: 100%;
+        width: 100%;
+        opacity: 0.05;
+    }
+
     &__bg-image2 {
         position: absolute;
         left: 0;

@@ -381,6 +381,7 @@ export default function Home() {
       </div>
       <div className="home__bg-image" />
       <div className="home__bg-image2" />
+      <div className="home__bg-noise" />
     </>
   );
 }
