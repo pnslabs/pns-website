@@ -47,11 +47,11 @@ import animationData from '../lottie/pns-welcome.json';
 
 const links = [
   {
-    link: 'https://discord.gg/ddJuKG3K',
+    link: 'https://discord.gg/D7mFfmyF',
     icon: <Discord />,
   },
   {
-    link: 'https://twitter.com/pnsxyz',
+    link: 'https://twitter.com/pnslabs',
     icon: <Twitter />,
   },
   {
@@ -59,7 +59,7 @@ const links = [
     icon: <Github />,
   },
   {
-    link: 'https://github.com/pnsfoundation',
+    link: 'https://t.me/pnsdao',
     icon: <Telegram />,
   },
 ];
