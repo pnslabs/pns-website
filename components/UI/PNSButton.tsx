@@ -49,7 +49,7 @@ const PNSButton = ({
                   <ButtonArrow />
                 </div>
               )}
-              {icon && <div className="button__icon">{icon}</div>}
+              {icon && icon}
             </>
           )}
         </div>

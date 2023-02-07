@@ -28,11 +28,11 @@
   }
   &__wrapper {
     @include row(center);
+    gap: 9.5px;
   }
 
   &__icon {
     transition: all 0.3s ease;
-    margin-left: 9.5px;
   }
 }
 
