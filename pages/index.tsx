@@ -45,9 +45,11 @@ import {
 import Lottie from 'react-lottie';
 import animationData from '../lottie/pns-welcome.json';
 
+const discordLink = 'https://discord.gg/D7mFfmyF';
+
 const links = [
   {
-    link: 'https://discord.gg/D7mFfmyF',
+    link: discordLink,
     icon: <Discord />,
   },
   {
@@ -55,11 +57,11 @@ const links = [
     icon: <Twitter />,
   },
   {
-    link: 'https://github.com/pnsfoundation',
+    link: 'https://github.com/pnslabs',
     icon: <Github />,
   },
   {
-    link: 'https://t.me/pnsdao',
+    link: 'https://t.me/pnslabs',
     icon: <Telegram />,
   },
 ];
@@ -491,7 +493,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
                 <a
                   key={index}
                   target="_blank"
-                  href={index === 0 ? '#' : 'https://discord.gg/ddJuKG3K'}
+                  href={index === 0 ? '#' : discordLink}
                   rel="noopener noreferrer">
                   <PNSButton
                     fullWidth
@@ -566,7 +568,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
         <div className="modal__image" />
       </div>
       <TwitterShareButton
-        url="https://pns.xyz"
+        url="https://usepns.xyz"
         hashtags={['PNS']}
         related={['pnsxyz']}>
         <div ref={twitterShareRef} className="home__share">
