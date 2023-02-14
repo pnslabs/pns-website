@@ -20,7 +20,7 @@ export default function Document() {
         <meta property="og:title" content="usepns.xyz" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://usepns.xyz" />
-        <meta property="og:image" content="/socials/Header.jpg" />
+        <meta property="og:image" content="/socials/header.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
@@ -30,7 +30,7 @@ export default function Document() {
 
         {/** Twitter share */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="/socials/Header.jpg" />
+        <meta property="twitter:image" content="/socials/header.jpg" />
 
         {/** Google Analytics */}
         {/* <Script
