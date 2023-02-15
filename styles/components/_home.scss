@@ -4,7 +4,7 @@
     font-family: $font-secondary;
 
     @include responsiveness(phone) {
-        height: 130vh;
+        height: 125vh;
     }
 
     &__bg-image {
@@ -19,6 +19,9 @@
         height: 100%;
         width: 100%;
         opacity: 0.4;
+        @include responsiveness(phone) {
+            height: 125vh;
+        }
     }
 
     &__bg-noise {
@@ -33,6 +36,9 @@
         height: 100%;
         width: 100%;
         opacity: 0.12;
+        @include responsiveness(phone) {
+            height: 125vh;
+        }
     }
 
     &__bg-image2 {
@@ -45,6 +51,9 @@
         background-size: cover;
         height: 100%;
         width: 100%;
+        @include responsiveness(phone) {
+            height: 125vh;
+        }
     }
 
     &__nav {
@@ -335,7 +344,7 @@
     &__img {
         object-fit: contain;
         @include responsiveness(desktop) {
-            height: 650px;
+            height: 600px;
         }
         @include responsiveness(tab-land) {
             width: 90%;
