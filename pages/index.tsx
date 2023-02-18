@@ -281,10 +281,10 @@ export default function Home() {
         <nav className="home__nav container">
           <div className="home__logo">
             <LogoWhite />
-            <div>
+            {/* <div>
               <h3 className="home__logo-title">Phone Number</h3>
               <h3 className="home__logo-title">Service</h3>
-            </div>
+            </div> */}
           </div>
           <div className="home__nav-links">
             {links.map((item, index) => (
