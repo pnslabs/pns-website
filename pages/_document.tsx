@@ -7,7 +7,7 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content="Unlock the power of web3 with your mobile phone."
+          content="Unlock the power of Web3 with your mobile phone."
         />
         <link rel="icon" type="image/x-icon" href="/favicon.svg" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -20,21 +20,24 @@ export default function Document() {
         <meta property="og:title" content="usepns.xyz" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://usepns.xyz" />
-        <meta property="og:image" content="/social-header.jpg" />
+        <meta property="og:image" content="/pns-banner.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta
           property="og:description"
-          content="Unlock the power of web3 with your mobile phone."
+          content="Unlock the power of Web3 with your mobile phone."
         />
+
+        {/* Search Keywords */}
+        <meta name="keywords" content="PNS, Web3, mobile phone" />
 
         {/** Twitter share */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:image" content="/social-header.jpg" />
+        <meta property="twitter:image" content="/pns-banner.jpg" />
 
         {/** Google Analytics */}
-        {/* <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-BDXNDSJLDQ"
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-JGWN1ZF7XH"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -43,9 +46,9 @@ export default function Document() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
         
-          gtag('config', 'G-BDXNDSJLDQ');
+          gtag('config', 'G-JGWN1ZF7XH');
         `}
-        </Script> */}
+        </Script>
       </Head>
       <body>
         <Main />
