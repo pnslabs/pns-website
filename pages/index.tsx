@@ -14,12 +14,10 @@ import { gsap } from 'gsap';
 import {
   GoogleReCaptchaProvider,
   useGoogleReCaptcha,
-  GoogleReCaptcha,
 } from 'react-google-recaptcha-v3';
 import { TwitterShareButton } from 'react-share';
 
 import heroImage from '../public/images/rectangle.png';
-import recaptchaImage from '../public/images/RecaptchaLogo.png';
 import heroImageMobile from '../public/images/rectangle2.png';
 import { PNSButton, PNSInput, PNSModal } from '../components/UI';
 import { butonTypes, outlineTypes } from '../components/UI/PNSButton';
@@ -33,7 +31,6 @@ import {
   LogoWhite,
   PurpleCircle,
   PurpleLine,
-  RecaptchaIcon,
   RedCircle,
   RedLine,
   Telegram,
@@ -281,10 +278,6 @@ export default function Home() {
         <nav className="home__nav container">
           <div className="home__logo">
             <LogoWhite />
-            {/* <div>
-              <h3 className="home__logo-title">Phone Number</h3>
-              <h3 className="home__logo-title">Service</h3>
-            </div> */}
           </div>
           <div className="home__nav-links">
             {links.map((item, index) => (
