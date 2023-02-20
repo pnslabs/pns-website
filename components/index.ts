@@ -8,6 +8,7 @@ import GetStarted from './GetStarted';
 import Footer from './Footer';
 import Communities from './Communities';
 import Notification from './Notification';
+import ModalBody from './ModalBody';
 
 export {
   Header,
@@ -20,4 +21,5 @@ export {
   Footer,
   Communities,
   Notification,
+  ModalBody,
 };
