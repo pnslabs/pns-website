@@ -19,8 +19,11 @@ export default function Document() {
         {/** Social share */}
         <meta property="og:title" content="PNS" />
         <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://usepns.xyz" /> */}
-        <meta property="og:image" content="/pns-banner.jpg" />
+        <meta property="og:url" content="https://usepns.xyz" />
+        <meta
+          property="og:image"
+          content="https://res.cloudinary.com/djzeufu4j/image/upload/v1677464416/pns-banner_d2fauh.jpg"
+        />
         <meta property="og:image:width" content="1500" />
         <meta property="og:image:height" content="547" />
         <meta
@@ -40,7 +43,10 @@ export default function Document() {
           content="Unlock the power of Web3 with your mobile phone."
         />
 
-        <meta property="twitter:image" content="/pns-banner.jpg" />
+        <meta
+          property="twitter:image:src"
+          content="https://res.cloudinary.com/djzeufu4j/image/upload/v1677464416/pns-banner_d2fauh.jpg"
+        />
 
         {/** Google Analytics */}
         <Script
