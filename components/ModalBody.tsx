@@ -35,7 +35,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
 
   const [btnText, setBtnText] = useState('Join Waitlist');
   const [isDisabled, setIsDisabled] = useState(false);
-  const [success, setSuccess] = useState(false);
+  const [success, setSuccess] = useState(true);
 
   const {
     register,
@@ -192,8 +192,8 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
       </div>
       <TwitterShareButton
         url="https://usepns.xyz"
-        hashtags={['PNS']}
-        related={['pnsxyz']}>
+        title="I'm in! Excited to be part of the @pnslabs community. Join me on the waitlist now and be the first to know when we launch! #PNS"
+        related={['@pnslabs']}>
         <div ref={twitterShareRef} className="home__share">
           SHARE
         </div>

@@ -3,7 +3,7 @@ import Script from 'next/script';
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <meta
           name="description"
@@ -17,7 +17,7 @@ export default function Document() {
         <meta name="apple-mobile-web-app-title" content="PNS" />
         <meta name="theme-color" content="#000000" />
         {/** Social share */}
-        <meta property="og:title" content="usepns.xyz" />
+        <meta property="og:title" content="PNS" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://usepns.xyz" />
         <meta property="og:image" content="/pns-banner.jpg" />
@@ -33,6 +33,13 @@ export default function Document() {
 
         {/** Twitter share */}
         <meta property="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@pnslabs" />
+        <meta name="twitter:title" content="PNS" />
+        <meta
+          name="twitter:description"
+          content="Unlock the power of Web3 with your mobile phone."
+        />
+
         <meta property="twitter:image" content="/pns-banner.jpg" />
 
         {/** Google Analytics */}

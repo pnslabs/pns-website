@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 import heroImage from '../public/images/rectangle.png';
+import heroDesktopImage from '../public/images/rectangle-desktop.png';
 import heroImageMobile from '../public/images/rectangle2.png';
 import { PNSButton, PNSModal } from '../components/UI';
 import { butonTypes } from '../components/UI/PNSButton';
@@ -127,7 +128,7 @@ export default function Home() {
         })
         .from('.home__title-desc', { duration: 0.4, opacity: 0, y: 45 })
         .from('.home__button-wrapper', { duration: 0.3, opacity: 0, y: 45 })
-        .from('.home__img, .home__img-mobile', {
+        .from('.home__img, .home__img-mobile, .home__img-desktop', {
           duration: 0.3,
           opacity: 0,
           y: 150,
@@ -319,6 +320,14 @@ export default function Home() {
               src={heroImage}
               alt="sample"
               className="home__img"
+            />
+            <Image
+              priority={true}
+              height={617}
+              style={{ objectFit: 'contain', width: '100%' }}
+              src={heroDesktopImage}
+              alt="sample"
+              className="home__img-desktop"
             />
             <div className="home__purple purple-circle">
               <PurpleCircle />

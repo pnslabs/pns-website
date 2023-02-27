@@ -342,15 +342,21 @@
     }
 
     &__img {
-        object-fit: contain;
         @include responsiveness(desktop) {
-            height: 600px;
+            display: none;
         }
         @include responsiveness(tab-land) {
             width: 90%;
         }
         @include responsiveness(phone) {
             display: none;
+        }
+    }
+
+    &__img-desktop {
+        display: none;
+        @include responsiveness(desktop) {
+            display: block;
         }
     }
 
