@@ -19,7 +19,7 @@ export default function Document() {
         {/** Social share */}
         <meta property="og:title" content="PNS" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://usepns.xyz" />
+        {/* <meta property="og:url" content="https://usepns.xyz" /> */}
         <meta property="og:image" content="/pns-banner.jpg" />
         <meta property="og:image:width" content="1500" />
         <meta property="og:image:height" content="547" />
