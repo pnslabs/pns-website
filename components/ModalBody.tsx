@@ -35,7 +35,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
 
   const [btnText, setBtnText] = useState('Join Waitlist');
   const [isDisabled, setIsDisabled] = useState(false);
-  const [success, setSuccess] = useState(true);
+  const [success, setSuccess] = useState(false);
 
   const {
     register,
