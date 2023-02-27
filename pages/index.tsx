@@ -317,7 +317,7 @@ export default function Home() {
               priority={true}
               height={317}
               style={{ objectFit: 'contain', width: '100%' }}
-              src={heroImage}
+              src={heroDesktopImage}
               alt="sample"
               className="home__img"
             />
