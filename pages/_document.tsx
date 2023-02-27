@@ -59,7 +59,6 @@ export default function Document() {
           name="twitter:image:alt"
           content="An image containing the PNS logo and a text saying; Unlock your crypto"
         />
-        <meta name="twitter:domain" content="https://usepns.xyz" />
         <meta name="twitter:image:width" content="1024" />
         <meta name="twitter:image:height" content="512" />
 
