@@ -171,7 +171,7 @@ const ModalBody = ({ handleModal }: { handleModal: () => void }) => {
               type="email"
               register={register('email')}
               error={errors.email?.message}
-              placeholder="codemathics@pns.foundation"
+              placeholder="codemathics@usepns.xyz"
             />
 
             <div className="modal__button-wrapper">
