@@ -33,7 +33,10 @@ export default function Document() {
         />
 
         {/* Search Keywords */}
-        <meta name="keywords" content="PNS, Web3, mobile phone" />
+        <meta
+          name="keywords"
+          content="PNS, Web3, mobile phone, PNS protocol, Phone number service protocol, phone number protocol, PNS Integration with Web3, PNS vs ENS, Phone Number on Web3, Web3 Phone Number Registration, PNS for DApps, Web3-based Phone Number Verification."
+        />
 
         {/** See also */}
         <meta property="og:see_also" content="https://twitter.com/pnslabs" />
